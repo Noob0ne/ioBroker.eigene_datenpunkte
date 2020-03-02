@@ -91,7 +91,7 @@
                 "role":  "Heizen"
             },
             "native": {}
-        }
+        },
      {
             "_id": "Mediensteuerung",
             "type": "channel",
