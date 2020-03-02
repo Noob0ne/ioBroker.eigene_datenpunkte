@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "eigene_datenpunkte",
-		"version": "0.0.2",
+		"version": "0.0.3",
 		"news": {
 			"0.0.1": {
 				"en": "initial release",
@@ -10,6 +10,10 @@
 			"0.0.2": {
 				"en": "initial release",
 				"de": "Bild aktualisiert"
+			},
+			"0.0.3": {
+				"en": "initial release",
+				"de": "Erzeuge Standardchannel"
 			}
 		},
 		"title": "Eigene Datenpunkte",
@@ -69,5 +73,33 @@
 		"option2": "42"
 	},
 	"objects": [],
-	"instanceObjects": []
+	"instanceObjects": [
+ 	{
+            "_id": "Lichtsteuerung",
+            "type": "channel",
+            "common": {
+                "name":  "Lichtsteuerung",
+                "role":  "Licht"
+            },
+            "native": {}
+        },
+ 	{
+            "_id": "Heizungssteuerung",
+            "type": "channel",
+            "common": {
+                "name":  "Heizungssteuerung",
+                "role":  "Heizen"
+            },
+            "native": {}
+        }
+     {
+            "_id": "Mediensteuerung",
+            "type": "channel",
+            "common": {
+                "name":  "Mediensteuerung",
+                "role":  "Medien"
+            },
+            "native": {}
+        }
+	]
 }
