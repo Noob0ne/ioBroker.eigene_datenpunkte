@@ -61,7 +61,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 		*/
 
 		// in this template all states changes inside the adapters namespace are subscribed
-		//this.subscribeStates("*");
+		this.subscribeStates("*");
 
 		/* 
 		setState examples
