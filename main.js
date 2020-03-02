@@ -106,6 +106,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 	 * @param {ioBroker.Object | null | undefined} obj
 	 */
 	onObjectChange(id, obj) {
+		this.log.info(`object ${id} aktualisiert: ${JSON.stringify(obj)}`);
 		if (obj) {
 			// The object was changed
 			this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
