@@ -144,7 +144,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info("send command");
 
 			// Send response in callback if required
-			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
+			// if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
 			}
 		}
 	}
