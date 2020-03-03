@@ -52,8 +52,7 @@
 			}
 		],
 		"messagebox":               true,
-        "subscribe":                "messagebox",
- 
+        "subscribe":                "messagebox"
 
 	},
 	"native": {
