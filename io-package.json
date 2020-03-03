@@ -19,11 +19,11 @@
 		"title": "Eigene Datenpunkte",
 		"titleLang": {
 			"en": "Eigene Datenpunkte",
-			"de": "Eigene Datenpunkte",
+			"de": "Eigene Datenpunkte"
 		},
 		"desc": {
 			"en": "Verwaltung eigener Datenpunkte",
-			"de": "Verwaltung eigener Datenpunkte",
+			"de": "Verwaltung eigener Datenpunkte"
 		},
 		"authors": [
 			"Noob0ne <git@felixxroth.de>"
@@ -50,7 +50,9 @@
 			{
 				"js-controller": ">=1.4.2"
 			}
-		]
+		],
+		"messagebox":               true,
+        "subscribe":                "messagebox"
 	},
 	"native": {
 		"option1": true,
