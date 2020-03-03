@@ -59,7 +59,7 @@
 		}
 
 		function buttonclicked(){
-			this.log.info("Button clicked");
+			 sendTo('deconz.' + instance, 'log', "clicked");
 		}
 
 	</script>

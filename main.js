@@ -148,6 +148,18 @@ class EigeneDatenpunkte extends utils.Adapter {
 	// 	}
 	// }
 
+	 message: async function (obj) {
+	 	if (obj) {
+                switch (obj.command) {
+                	case 'log':
+                		this.log.info(obj);
+                		break;
+                	default:
+                		return false;
+                	}
+                }
+            return true;
+            }
 }
 
 // @ts-ignore parent is a valid property on module
