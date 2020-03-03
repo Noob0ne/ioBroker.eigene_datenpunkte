@@ -20,26 +20,10 @@
 		"titleLang": {
 			"en": "Eigene Datenpunkte",
 			"de": "Eigene Datenpunkte",
-			"ru": "Эйджен Датенпункте",
-			"pt": "Eigene Datenpunkte",
-			"nl": "Eigene Datenpunkte",
-			"fr": "Eigene Datenpunkte",
-			"it": "Eigene Datenpunkte",
-			"es": "Eigene Datenpunkte",
-			"pl": "Eigene Datenpunkte",
-			"zh-cn": "Eigene Datenpunkte"
 		},
 		"desc": {
 			"en": "Verwaltung eigener Datenpunkte",
 			"de": "Verwaltung eigener Datenpunkte",
-			"ru": "Verwaltung Eigener Datenpunkte",
-			"pt": "Verwaltung eigener Datenpunkte",
-			"nl": "Verwaltung eigener Datenpunkte",
-			"fr": "Verwaltung eigener Datenpunkte",
-			"it": "Verwaltung eigener Datenpunkte",
-			"es": "Verwaltung eigener Datenpunkte",
-			"pl": "Verwaltung eigener Datenpunkte",
-			"zh-cn": "Verigutung eigener Datenpunkte"
 		},
 		"authors": [
 			"Noob0ne <git@felixxroth.de>"
@@ -66,7 +50,11 @@
 			{
 				"js-controller": ">=1.4.2"
 			}
-		]
+		],
+		"messagebox":               true,
+        "subscribe":                "messagebox",
+ 
+
 	},
 	"native": {
 		"option1": true,
