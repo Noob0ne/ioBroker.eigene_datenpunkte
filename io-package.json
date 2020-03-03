@@ -46,6 +46,7 @@
 		"connectionType": "local",
 		"dataSource": "push",
 		"materialize": true,
+		"message":true,
 		"messagebox": true,
 	   	"subscribe": "messagebox",
 		"dependencies": [
