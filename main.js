@@ -160,11 +160,13 @@ class EigeneDatenpunkte extends utils.Adapter {
 					});
 					break;
 				case "getChannel":
-					return "hallo";
+					return obj.message;
 					break;
 				default:
 					this.log.info('command ${obj.message} is unkown');
 			}
+		}else{
+			this.log.info('${obj} is not an Object');
 		}
 	}
 }
