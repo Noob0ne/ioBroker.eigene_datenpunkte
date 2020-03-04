@@ -50,10 +50,8 @@
 			{
 				"js-controller": ">=1.4.2"
 			}
-		],
-        "messagebox":               true,
-        "subscribe":                "messagebox"
-        
+		]
+
 	},
 	"native": {
 		"option1": true,
