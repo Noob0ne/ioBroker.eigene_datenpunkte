@@ -162,7 +162,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				case "getChannel":
 					// ONLY change obj.message!
-					this.sendTo(obj.from, obj.command, getString(), obj.callback);
+					returnVal("Hallo!")
 					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
@@ -172,8 +172,9 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 	}
 }
-function getString() {
-	return "Hallo Felix!";
+
+function returnVal(val){
+	this.sendTo(obj.from, obj.command, val, obj.callback);
 }
 
 // @ts-ignore parent is a valid property on module
