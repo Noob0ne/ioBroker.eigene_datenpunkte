@@ -175,7 +175,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 }
 
 function createGroup(name, callback) {
-	callback("servus");
+	callback({error: 0, message: 'success'});
 }
 
 
