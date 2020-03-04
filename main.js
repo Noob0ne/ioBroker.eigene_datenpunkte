@@ -161,9 +161,12 @@ class EigeneDatenpunkte extends utils.Adapter {
 					});
 					break;
 				case "getChannel":
-					this.log.info('returning: '+ obj.message);
-					this.sendTo(obj.from, obj.command, JSON.stringify(obj.message), obj.callback);
-					 break;
+					this.log.info('from: '+ obj.from);
+					this.log.info('command: '+ obj.command);
+					this.log.info('message: '+ obj.message);
+					this.log.info('callback: '+ obj.callback);
+					this.sendTo(obj.from, obj.command, obj.message, obj.callback);
+					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
 			}
@@ -172,11 +175,6 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 	}
 }
-
-function createGroup(name, callback) {
-	callback("servus");
-}
-
 
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
