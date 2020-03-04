@@ -62,7 +62,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 
 		// in this template all states changes inside the adapters namespace are subscribed
 		this.subscribeStates("*");
-		this.createState("testVariable",true,true);
+		this.createState('myVariable', 1, {name: 'My own variable', unit: '°C'});
 
 		/* 
 		setState examples
