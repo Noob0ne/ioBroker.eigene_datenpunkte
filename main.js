@@ -148,7 +148,9 @@ class EigeneDatenpunkte extends utils.Adapter {
 				case "log":
 					this.log.info(obj.message);
 					break;
-				}
+				default:
+					this.log.info("command <".obj.message."> is unkown");
+			}
 			}
 		}
 	}
