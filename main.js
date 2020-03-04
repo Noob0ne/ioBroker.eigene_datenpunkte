@@ -137,7 +137,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 	* @param {ioBroker.Message} obj
 	*/
 	onMessage(obj) {
-	if (typeof obj === "object" && obj.message) {
+	if (obj && obj.message) {
 		if (obj.command === "send") {
 			// e.g. send email or pushover or whatever
 			//this.log.info("send command");
