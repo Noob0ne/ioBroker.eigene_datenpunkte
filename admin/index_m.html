@@ -64,7 +64,7 @@
 		function getChannel(){
 			 sendTo('eigene_datenpunkte.' + instance, "getChannel");
 		}
-
+		Steuerung.innerHTML="<option value=\"volvo\">Volvo</option>";
 	</script>
 
 </head>
@@ -82,12 +82,8 @@
 		<!-- Put your content here -->
 		<h4>Eigene Datenpunkte</h4>
 		<!-- For example columns with settings: -->
-		<label for="cars">Choose a car:</label>
-		<select id="cars">
-		  <option value="volvo"><script>getChannel();</script></option>
-		  <option value="saab">Saab</option>
-		  <option value="mercedes">Mercedes</option>
-		  <option value="audi">Audi</option>
+		<label for="Steuerung">option1</label>
+		<select id="Steuerung">
 		</select>
 
 
