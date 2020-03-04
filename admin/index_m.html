@@ -61,7 +61,7 @@
 		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
 			sendTo('eigene_datenpunkte.'+ instance, "getChannel", "message", function(x){
-				alert(x);
+				headline.innerHTML="changed!"
 			});
 		}
 		function getChannel(){
@@ -82,7 +82,7 @@
 		</div>
 
 		<!-- Put your content here -->
-		<h4>Eigene Datenpunkte</h4>
+		<h2 id="headline">Eigene Datenpunkte</h2>
 		<!-- For example columns with settings: -->
 		<label for="Steuerung">option1</label>
 		<select id="Steuerung">
