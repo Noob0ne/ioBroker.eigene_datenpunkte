@@ -161,7 +161,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				case "getChannel":
 					this.log.info('returning: '+ obj.message);
-					 await createGroup(obj.message, (res) => {
+					 createGroup(obj.message, (res) => {
                             if (obj.callback) adapter.sendTo(obj.from, obj.command, JSON.stringify(res), obj.callback);
                         });
 				default:
@@ -173,7 +173,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 	}
 }
 
-async function createGroup(name, callback) {
+function createGroup(name, callback) {
 	callback({error: 0, message: 'success'});
 }
 
