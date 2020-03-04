@@ -61,6 +61,9 @@
 		function buttonclicked(){
 			 sendTo('eigene_datenpunkte.' + instance, "create", "OnOff");
 		}
+		function getChannel(){
+			 sendTo('eigene_datenpunkte.' + instance, "getChannel");
+		}
 
 	</script>
 
@@ -81,13 +84,13 @@
 		<!-- For example columns with settings: -->
 		<label for="cars">Choose a car:</label>
 		<select id="cars">
-		  <option value="volvo">Volvo</option>
+		  <option value="volvo"><script>getChannel();</script></option>
 		  <option value="saab">Saab</option>
 		  <option value="mercedes">Mercedes</option>
 		  <option value="audi">Audi</option>
 		</select>
 
-		
+
 		<div class="row">
 			<div class="col s6 input-field">
 				<input type="button" value="Klick mich" onclick="buttonclicked()">

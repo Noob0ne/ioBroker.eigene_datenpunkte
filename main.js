@@ -159,6 +159,9 @@ class EigeneDatenpunkte extends utils.Adapter {
 						native: {},
 					});
 					break;
+				case "getChannel":
+					return "hallo";
+					break;
 				default:
 					this.log.info('command ${obj.message} is unkown');
 			}
