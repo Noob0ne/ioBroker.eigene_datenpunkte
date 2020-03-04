@@ -137,7 +137,6 @@ class EigeneDatenpunkte extends utils.Adapter {
 	* @param {ioBroker.Message} obj
 	*/
 	onMessage(obj) {
-	if (obj && obj.message) {
 		if (obj.command === "send") {
 			// e.g. send email or pushover or whatever
 			//this.log.info("send command");
@@ -150,7 +149,6 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				default:
 					this.log.info('command ${obj.message} is unkown');
-			}
 			}
 		}
 	}
