@@ -166,7 +166,7 @@ class EigeneDatenpunkte extends utils.Adapter {
                             if (obj.callback) this.sendTo(obj.from, obj.command, JSON.stringify(res), obj.callback);
                         });
 				default:
-					this.log.info('command <'+ $obj.command +'> is unkown');
+					this.log.info('command <'+ obj.command +'> is unkown');
 			}
 		}else{
 			this.log.info(obj+" is not an Object");
