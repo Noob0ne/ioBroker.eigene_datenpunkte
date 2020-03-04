@@ -147,7 +147,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 					this.log.info(obj.message);
 					break;
 				case "create":
-					createState(obj.message, 20, true, {name: 'My own variable', unit: '°C'});
+					this.createState(obj.message, 20, true, {name: 'My own variable', unit: '°C'});
 					break;
 				default:
 					this.log.info('command ${obj.message} is unkown');
