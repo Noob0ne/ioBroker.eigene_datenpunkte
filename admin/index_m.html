@@ -110,8 +110,8 @@
 
 
 <script type="text/javascript">
-	sendTo('eigene_datenpunkte.'+ instance, "log", function (write) {
-   		return write;	
+	sendTo('eigene_datenpunkte.'+ instance, "getChannel", function (write) {
+   		sendTo('eigene_datenpunkte.' + instance, "log", write);
    	});
 	Steuerung.innerHTML= sendTo('eigene_datenpunkte.' + instance, "create", "OnOff");
 </script>
