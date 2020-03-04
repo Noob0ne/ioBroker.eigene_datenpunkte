@@ -59,6 +59,7 @@
 		}
 
 		function buttonclicked(){
+			alert("Test");
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
 			sendTo('eigene_datenpunkte.' + instance, "log", sendTo('eigene_datenpunkte.'+ instance, "getChannel", "message"));
 			sendTo('eigene_datenpunkte.'+ instance, "getChannel", "asd", function (write) {
