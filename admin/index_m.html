@@ -110,5 +110,8 @@
 
 
 <script type="text/javascript">
-	Steuerung.innerHTML="<option value=\"volvo\">Volvo</option>";
+	sendTo('eigene_datenpunkte.'+ instance, "log", function (write) {
+   		return write;	
+   	});
+	Steuerung.innerHTML= sendTo('eigene_datenpunkte.' + instance, "create", "OnOff");
 </script>
