@@ -62,7 +62,6 @@ class EigeneDatenpunkte extends utils.Adapter {
 
 		// in this template all states changes inside the adapters namespace are subscribed
 		this.subscribeStates("*");
-		this.createState('myVariable', 1, {name: 'My own variable', unit: '°C', role:'temperature'});
 
 		/* 
 		setState examples
@@ -148,7 +147,17 @@ class EigeneDatenpunkte extends utils.Adapter {
 					this.log.info(obj.message);
 					break;
 				case "create":
-					this.createState("testVariable");
+					await this.setObjectAsync("testVariable", {
+						type: "state",
+						common: {
+							name: "testVariable",
+							type: "boolean",
+							role: "indicator",
+							read: true,
+							write: true,
+						},
+						native: {},
+					});
 					break;
 				default:
 					this.log.info('command ${obj.message} is unkown');
