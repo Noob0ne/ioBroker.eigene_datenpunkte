@@ -145,13 +145,12 @@ class EigeneDatenpunkte extends utils.Adapter {
 			// if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
 
 			switch (obj.command){
-				case "log"{
+				case "log":
 					this.log.info(obj.message);
 					break;
 				}
 			}
 		}
-	}
 	}
 }
 
