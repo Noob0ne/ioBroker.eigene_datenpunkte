@@ -160,7 +160,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 					});
 					break;
 				case "getChannel":
-					this.log.info('returning: ${obj.message}');
+					this.log.info('returning: '+ obj.message);
 					return obj.message;
 					break;
 				default:
