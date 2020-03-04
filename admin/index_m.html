@@ -59,7 +59,10 @@
 		}
 
 		function buttonclicked(){
-			 sendTo('eigene_datenpunkte.' + instance, "create", "OnOff");
+			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
+			sendTo('eigene_datenpunkte.'+ instance, "getChannel", function (write) {
+   				sendTo('eigene_datenpunkte.' + instance, "log", write);
+   			});
 		}
 		function getChannel(){
 			 sendTo('eigene_datenpunkte.' + instance, "getChannel");
