@@ -163,7 +163,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				case "getChannel":
 					this.log.info('returning: '+ obj.message);
 					 (res) => {
-                        	obj.message;
+                            if (obj.callback) this.sendTo(obj.from, obj.command, JSON.stringify(res), obj.callback);
                         };
 				default:
 					this.log.info('command <'+ $obj.command +'> is unkown');
