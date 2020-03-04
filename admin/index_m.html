@@ -63,6 +63,24 @@
 			sendTo('eigene_datenpunkte.'+ instance, "getChannel", "message", function(x){
 				headline.innerHTML="changed!"
 			});
+
+
+
+
+
+
+			sendTo('eigene_datenpunkte.' + instance, "getChannel", "muh", function(result){
+            	sendTo('eigene_datenpunkte.' + instance, "log", result);
+            });
+
+
+
+
+
+
+
+
+
 		}
 		function getChannel(){
 			 sendTo('eigene_datenpunkte.' + instance, "getChannel");

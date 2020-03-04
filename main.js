@@ -161,8 +161,9 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				case "getChannel":
 					this.log.info('returning: '+ obj.message);
-					return obj.message;
-					break;
+					 await createGroup(obj.message, (res) => {
+                            if (obj.callback) adapter.sendTo(obj.from, obj.command, JSON.stringify(res), obj.callback);
+                        });
 				default:
 					this.log.info('command ${obj.message} is unkown');
 			}
@@ -171,6 +172,11 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 	}
 }
+
+async function createGroup(name, callback) {
+	callback({error: 0, message: 'success'});
+}
+
 
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
