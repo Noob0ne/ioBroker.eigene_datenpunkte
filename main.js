@@ -170,11 +170,10 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}else{
 			this.log.info(obj+" is not an Object");
 		}
+		function returnVal(val){
+			this.sendTo(obj.from, obj.command, val, obj.callback);
+		}
 	}
-}
-
-function returnVal(val){
-	this.sendTo(obj.from, obj.command, val, obj.callback);
 }
 
 // @ts-ignore parent is a valid property on module
