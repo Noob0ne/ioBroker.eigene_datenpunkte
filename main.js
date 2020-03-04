@@ -166,7 +166,7 @@ class EigeneDatenpunkte extends utils.Adapter {
                         	obj.message;
                         };
 				default:
-					this.log.info('command <'+ $obj.message +'> is unkown');
+					this.log.info('command <'+ $obj.command +'> is unkown');
 			}
 		}else{
 			this.log.info(obj+" is not an Object");
