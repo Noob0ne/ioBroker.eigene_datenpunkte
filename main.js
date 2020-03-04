@@ -131,6 +131,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 	}
 
+
 	/**
 	* Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
 	* Using this method requires "common.message" property to be set to true in io-package.json
