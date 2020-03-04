@@ -146,6 +146,19 @@ class EigeneDatenpunkte extends utils.Adapter {
 				case "log":
 					this.log.info(obj.message);
 					break;
+				case "create":
+					await this.setObjectAsync(obj.message, {
+						type: "state",
+						common: {
+						name: "testVariable",
+						type: "boolean",
+						role: "indicator",
+						read: true,
+						write: true,
+					},
+					native: {},
+					});
+					break;
 				default:
 					this.log.info('command ${obj.message} is unkown');
 			}
