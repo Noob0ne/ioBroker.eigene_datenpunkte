@@ -60,9 +60,10 @@
 
 		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
-			sendTo('eigene_datenpunkte.'+ instance, "getChannel", function (write) {
-   				sendTo('eigene_datenpunkte.' + instance, "log", "write");
-   			});
+			sendTo('eigene_datenpunkte.' + instance, "log", sendTo('eigene_datenpunkte.'+ instance, "getChannel", "message");
+			sendTo('eigene_datenpunkte.'+ instance, "getChannel", "asd", function (write) {
+		   		sendTo('eigene_datenpunkte.' + instance, "log", write);
+		   	});
 		}
 		function getChannel(){
 			 sendTo('eigene_datenpunkte.' + instance, "getChannel");
@@ -113,9 +114,5 @@
 
 
 <script type="text/javascript">
-	sendTo('eigene_datenpunkte.' + instance, "log", sendTo('eigene_datenpunkte.'+ instance, "getChannel", "message");
-	sendTo('eigene_datenpunkte.'+ instance, "getChannel", "asd", function (write) {
-   		sendTo('eigene_datenpunkte.' + instance, "log", write);
-   	});
 	Steuerung.innerHTML="<option value=\"default\">--Bitte ausw&auml;hlen--</option>";
 </script>
