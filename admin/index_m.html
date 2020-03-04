@@ -116,5 +116,5 @@
 	sendTo('eigene_datenpunkte.'+ instance, "getChannel", "asd", function (write) {
    		sendTo('eigene_datenpunkte.' + instance, "log", write);
    	});
-	Steuerung.innerHTML= sendTo('eigene_datenpunkte.' + instance, "create", "OnOff");
+	Steuerung.innerHTML="<option value=\"default\">--Bitte ausw&auml;hlen--</option>";
 </script>
