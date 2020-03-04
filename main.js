@@ -162,16 +162,13 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				case "getChannel":
 					// ONLY change obj.message!
-					returnVal("Hallo!")
+					this.sendTo(obj.from, obj.command, obj.message, obj.callback);
 					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
 			}
 		}else{
 			this.log.info(obj+" is not an Object");
-		}
-		function returnVal(val){
-			this.sendTo(obj.from, obj.command, val, obj.callback);
 		}
 	}
 }
