@@ -162,8 +162,8 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				case "get":
 					// ONLY change obj.message!
+					this.log.info("Heute hier");
 					this.sendTo(obj.from, obj.command, exporting(obj.message), obj.callback);
-						this.log.info("Heute hier");
 					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
