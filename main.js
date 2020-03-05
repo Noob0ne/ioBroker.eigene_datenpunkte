@@ -163,7 +163,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				case "get":
 					// ONLY change obj.message!
 					this.log.info("Heute hier");
-					this.sendTo(obj.from, obj.command, this.getObject("Lichtsteuerung").common.name, obj.callback);
+					this.sendTo(obj.from, obj.command, this.getObjectAsync("Lichtsteuerung").common, obj.callback);
 					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
