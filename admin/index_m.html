@@ -60,10 +60,9 @@
 
 		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
-			sendTo('eigene_datenpunkte.'+ instance, "getChannel", "Willkommen" , (result) => {
+			sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (result) => {
 				headline.innerHTML=result;
 			});
-
 		}
 		function getChannel(){
 			 sendTo('eigene_datenpunkte.' + instance, "getChannel");
