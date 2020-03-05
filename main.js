@@ -170,7 +170,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}else{
 			this.log.info(obj+" is not an Object");
 		}
-		exporting(message) {
+		function exporting(message) {
 			switch (message){
 				case "channel":
 					this.log.info(JSON.stringify(this));
