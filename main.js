@@ -163,7 +163,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				case "get":
 					// ONLY change obj.message!
 					this.getObject('Lichtsteuerung', function (err, obj) {
-						this.log.info(obj.common.name);
+						adapter.log.info(obj.common.name);
 					}); 
 					this.sendTo(obj.from, obj.command, exporting("channel"), obj.callback);
 					break;
