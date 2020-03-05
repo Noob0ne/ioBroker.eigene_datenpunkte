@@ -58,13 +58,13 @@
 			callback(obj);
 		}
 
+		trigger("Channel",fillFirstDropdown);
+
 		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
-			get("Channel",alert);
 		}
 
-
-		function get(type,func){
+		function trigger(type,func){
 			sendTo('eigene_datenpunkte.'+ instance, "get", type , (res) => {
 				func(res);
 			});
@@ -86,8 +86,8 @@
 		<!-- Put your content here -->
 		<h2 id="headline">Eigene Datenpunkte</h2>
 		<!-- For example columns with settings: -->
-		<label for="Steuerung">option1</label>
-		<select id="Steuerung">
+		<label for="drop1">option1</label>
+		<select id="drop1">
 		</select>
 
 
@@ -115,5 +115,7 @@
 
 
 <script type="text/javascript">
-	Steuerung.innerHTML="<option value=\"default\">--Bitte ausw&auml;hlen--</option>";
+		function fillFirstDropdown(content){
+			drop1.innerHTML="<option value=\""+content+"\">"+content+"</option>";
+		}
 </script>
