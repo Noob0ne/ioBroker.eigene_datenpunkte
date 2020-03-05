@@ -62,7 +62,7 @@
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
 			alert(getChannel());
 		}
-		async function getChannel(){
+		function getChannel(){
 			return sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
 				return res;
 			});
