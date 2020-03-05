@@ -63,7 +63,7 @@
 		}
 
 		function trigger(type,func){
-			sendTo('eigene_datenpunkte.'+ instance, "get", type , (res) => {
+			sendTo('eigene_datenpunkte.'+ instance, "gett", type , (res) => {
 				func(res);
 			});
 		}

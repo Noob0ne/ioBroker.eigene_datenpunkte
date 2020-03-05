@@ -160,7 +160,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 						native: {},
 					});
 					break;
-				case "get":
+				case "gett":
 					// ONLY change obj.message!
 					this.sendTo(obj.from, obj.command, exporting(this,obj.message), obj.callback);
 					break;
