@@ -58,13 +58,13 @@
 			callback(obj);
 		}
 
-		async function buttonclicked(){
+		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
 			alert(fillChannels());
 		}
 
 		function fillChannels(){
-			sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
+			await sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
 				return res;
 			});
 		}
