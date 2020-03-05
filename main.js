@@ -163,7 +163,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				case "get":
 					// ONLY change obj.message!
 					this.log.info(this.getObjectAsync("Lichtsteuerung").common);
-					this.sendTo(obj.from, obj.command, JSON.stringify(this.getObjectAsync("Lichtsteuerung").common), obj.callback);
+					this.sendTo(obj.from, obj.command, exporting("channel"), obj.callback);
 					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
@@ -174,8 +174,10 @@ class EigeneDatenpunkte extends utils.Adapter {
 		function exporting(message) {
 			switch (message){
 				case "channel":
+					adapter.getObject('Lichtsteuerung', function (err, obj) {
+						this.log.info(obj.common.name);
+					}); 
 					this.log.info("Morgen dort");
-					this.log.info(JSON.stringify(this));
 					return this.getObjectAsync("Lichtsteuerung").common;
 					break;
 				default:
