@@ -60,12 +60,19 @@
 
 		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
-			alert(getChannel());
+			alert(fillChannels());
 		}
-		function getChannel(){
-			return sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
+
+		function fillChannels(){
+			wait = true;
+			result = sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
+				wait = false;
 				return res;
 			});
+			while(wait){
+
+			}
+			return result;
 		}
 	</script>
 
