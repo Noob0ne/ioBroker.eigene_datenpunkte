@@ -160,9 +160,9 @@ class EigeneDatenpunkte extends utils.Adapter {
 						native: {},
 					});
 					break;
-				case "getChannel":
+				case "get":
 					// ONLY change obj.message!
-					this.sendTo(obj.from, obj.command, obj.message, obj.callback);
+					this.sendTo(obj.from, obj.command, export(obj.message), obj.callback);
 					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
@@ -171,6 +171,10 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info(obj+" is not an Object");
 		}
 	}
+}
+
+function export(message) {
+	return "hallo!"
 }
 
 // @ts-ignore parent is a valid property on module
