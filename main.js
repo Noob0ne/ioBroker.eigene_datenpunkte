@@ -174,7 +174,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 
 }
 
-exporting(adapter,message) {
+function exporting(adapter,message) {
 	switch (message){
 		case "channel":
 			adapter.getObject("Lichtsteuerung").common.name;
