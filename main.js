@@ -162,7 +162,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				case "get":
 					// ONLY change obj.message!
-					this.log.info("Heute hier");
+					this.log.info(this.getObjectAsync("Lichtsteuerung").common);
 					this.sendTo(obj.from, obj.command, JSON.stringify(this.getObjectAsync("Lichtsteuerung").common), obj.callback);
 					break;
 				default:
