@@ -174,7 +174,13 @@ class EigeneDatenpunkte extends utils.Adapter {
 }
 
 function exporting(message) {
-	return "hallo!"
+	switch (message){
+		case "channel":
+			this.getObject("Lichtsteuerung").common.name;
+			break;
+		default:
+			return false;
+	}
 }
 
 // @ts-ignore parent is a valid property on module
