@@ -64,12 +64,9 @@
 		}
 
 		function fillChannels(){
-			wait = true;
-			result = sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
-				wait = false;
+			sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
 				return res;
 			});
-			return result;
 		}
 	</script>
 
