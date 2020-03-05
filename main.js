@@ -171,7 +171,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info(obj+" is not an Object");
 		}
 	}
-	function exporting(message) {
+	exporting(message) {
 	switch (message){
 		case "channel":
 			this.getObject("Lichtsteuerung").common.name;
