@@ -60,12 +60,13 @@
 
 		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
-			sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (result) => {
-				headline.innerHTML=result;
-			});
+			alert(getChannel());
 		}
 		function getChannel(){
-			 sendTo('eigene_datenpunkte.' + instance, "getChannel");
+			sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
+				var result = res;
+			});
+			return result;
 		}
 	</script>
 
