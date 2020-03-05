@@ -177,7 +177,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 function exporting(adapter,message) {
 	switch (message){
 		case "channel":
-			return adapter.getStateAsync("eigene_datenpunkte.0.Lichtsteuerung");
+			return adapter.getStateAsync("eigene_datenpunkte.0.Lichtsteuerung").common.name;
 			break;
 		default:
 			return false;
