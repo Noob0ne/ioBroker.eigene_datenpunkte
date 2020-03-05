@@ -65,7 +65,7 @@
 		function getChannel(){
 			var result;
 			result = sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
-				return res;
+				alert(res);
 			});
 			return result;
 		}
