@@ -171,15 +171,14 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info(obj+" is not an Object");
 		}
 	}
-}
-
-function exporting(message) {
+	function exporting(message) {
 	switch (message){
 		case "channel":
-			this.getObjectAsync("Lichtsteuerung").common.name;
+			this.getObject("Lichtsteuerung").common.name;
 			break;
 		default:
 			return false;
+	}
 	}
 }
 
