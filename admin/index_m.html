@@ -58,8 +58,6 @@
 			callback(obj);
 		}
 
-		trigger("Channel",fillFirstDropdown);
-
 		function buttonclicked(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
 		}
@@ -115,6 +113,7 @@
 
 
 <script type="text/javascript">
+		trigger("Channel",fillFirstDropdown);
 		function fillFirstDropdown(content){
 			drop1.innerHTML="<option value=\""+content+"\">"+content+"</option>";
 		}
