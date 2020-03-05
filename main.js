@@ -162,7 +162,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 					break;
 				case "get":
 					// ONLY change obj.message!
-					this.sendTo(obj.from, obj.command, exporting(obj.message), obj.callback);
+					this.sendTo(obj.from, obj.command, exporting(this,obj.message), obj.callback);
 					break;
 				default:
 					this.log.info('command <'+ obj.command +'> is unkown');
@@ -171,16 +171,19 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info(obj+" is not an Object");
 		}
 	}
-	exporting(message) {
+
+}
+
+exporting(adapter,message) {
 	switch (message){
 		case "channel":
-			this.getObject("Lichtsteuerung").common.name;
+			adapter.getObject("Lichtsteuerung").common.name;
 			break;
 		default:
 			return false;
 	}
-	}
 }
+
 
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
