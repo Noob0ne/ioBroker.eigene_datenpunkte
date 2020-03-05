@@ -173,7 +173,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 		function exporting(message) {
 			switch (message){
 				case "channel":
-					adapter.log.info(JSON.stringify(this));
+					this.log.info(JSON.stringify(this));
 					return this.getObjectAsync("Lichtsteuerung").common;
 					break;
 				default:
