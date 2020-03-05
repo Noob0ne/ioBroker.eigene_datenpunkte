@@ -64,7 +64,7 @@
 		}
 
 		function fillChannels(){
-			sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
+			await sendTo('eigene_datenpunkte.'+ instance, "get", "Channel" , (res) => {
 				alert (res);
 				return res;
 			});
