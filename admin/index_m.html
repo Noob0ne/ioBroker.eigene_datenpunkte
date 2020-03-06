@@ -80,13 +80,8 @@
 			level0 = 'Mediensteuerung';
 		}
 
-		function refreshActiveTab(aktiveTab_new){
-			let activeTab = activeTab_new;
-			sendTo('eigene_datenpunkte.' + instance, "log", activeTab_new);
-		}
-
 		function createDevice(){
-			sendTo('eigene_datenpunkte.' + instance, "log", activeTab);
+			sendTo('eigene_datenpunkte.' + instance, "log", room.value);
 		}
 
 	</script>
@@ -116,7 +111,7 @@
 		    <div id="lamp" class="col s12">
 		    	<div class="row">
 			      	<div class="input-field col s6">
-					<select>
+					<select id="room">
 				    	<option value="Badezimmer">Badezimmer</option>
 						<option value="Buero">B&uuml;ro</option>
 						<option value="Esszimmer">Esszimmer</option>
