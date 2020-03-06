@@ -106,7 +106,7 @@
 
 			var DevicePath = level0 + level1 + level2;
 
-			sendTo('eigene_datenpunkte.' + instance, "log", value1.value);
+			sendTo('eigene_datenpunkte.' + instance, "log", value1.checked);
 			//location.reload();
 		}
 
@@ -173,8 +173,8 @@
 					<label for="name_heating">Name</label>
 				</div>
 				<div class="input-field col s12 m4 l3">
-					<input class="value" id="value1" type="checkbox" />
-					<label class="translate" for="value1">Test123</label>
+					<input id="value1" type="checkbox" />
+					<label for="value1">Test123</label>
 				</div>
 			</div>
 
