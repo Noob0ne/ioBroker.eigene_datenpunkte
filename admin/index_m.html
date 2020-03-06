@@ -105,7 +105,7 @@
 		<div class="row">
 		    <div class="col s12">
 		      <ul class="tabs">
-		        <li class="tab col s4"><a href="#test1" onclick="refreshActiveTab()">Lampen</a></li>
+		        <li class="tab col s4"><a href="#test1" onclick="alert('bambam')">Lampen</a></li>
 		        <li class="tab col s4"><a href="#test2" onclick="refreshActiveTab('heating')">Heizen</a></li>
 		        <li class="tab col s4"><a href="#test3" onclick="refreshActiveTab('media')">Medien</a></li>
 		      </ul>
@@ -115,16 +115,16 @@
 		    </div>
 		    <div id="test2" class="col s12">
 			 <div class="row">
-			    <form class="col s4">
+			    <form class="col s12">
 			      <div class="row">
-			        <div class="input-field col s8">
+			        <div class="input-field col s4">
 				    <select>
 				      <option value="1">Thermostat</option>
 				      <option value="2">Sensor</option>
 				    </select>
 				    <label>Type</label>
 				  </div>
-			        <div class="input-field col s6">
+			        <div class="input-field col s8">
 			          <input id="name_heating" type="text" class="validate">
 			          <label for="name_heating">Name</label>
 			        </div>
