@@ -74,6 +74,11 @@
 			activeTab=activeTab_new;
 		}
 
+		function refreshActiveTab(aktiveTab_new){
+			alert(activeTab_new);
+			activeTab=activeTab_new;
+		}
+
 		function createDevice(){
 			sendTo('eigene_datenpunkte.' + instance, "log", activeTab);
 		}
@@ -106,9 +111,9 @@
 		    </div>
 		    <div id="test2" class="col s12">
 			 <div class="row">
-			    <form class="col s12">
+			    <form class="col s4">
 			      <div class="row">
-			        <div class="input-field col s6">
+			        <div class="input-field col s8">
 				    <select>
 				      <option value="1">Thermostat</option>
 				      <option value="2">Sensor</option>
@@ -134,10 +139,3 @@
 
 </body>
 </html>
-
-<script type="text/javascript">
-	function refreshActiveTab(aktiveTab_new){
-		alert(activeTab_new);
-		activeTab=activeTab_new;
-	}
-</script>
