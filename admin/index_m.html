@@ -28,14 +28,14 @@
 				if ($key.attr('type') === 'checkbox') {
 					// do not call onChange direct, because onChange could expect some arguments
 					$key.prop('checked', settings[id])
-						.on('change', () => onChange())
-						;
+					.on('change', () => onChange())
+					;
 				} else {
 					// do not call onChange direct, because onChange could expect some arguments
 					$key.val(settings[id])
-						.on('change', () => onChange())
-						.on('keyup', () => onChange())
-						;
+					.on('change', () => onChange())
+					.on('keyup', () => onChange())
+					;
 				}
 			});
 			onChange(false);
@@ -100,18 +100,18 @@
 
 
 		<div class="row">
-		    <div class="col s12">
-		      <ul class="tabs">
-		        <li class="tab col s4"><a href="#lamp" onclick="activeLamp()">Lampen</a></li>
-		        <li class="tab col s4"><a href="#heater" onclick="activeHeater()">Heizen</a></li>
-		        <li class="tab col s4"><a href="#media" onclick="activeMedia()">Medien</a></li>
-		      </ul>
-		    </div>
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s4"><a href="#lamp" onclick="activeLamp()">Lampen</a></li>
+					<li class="tab col s4"><a href="#heater" onclick="activeHeater()">Heizen</a></li>
+					<li class="tab col s4"><a href="#media" onclick="activeMedia()">Medien</a></li>
+				</ul>
+			</div>
 
-		    <div id="lamp">
-			      <div class="input-field col s4">
+			<div id="lamp">
+				<div class="input-field col s4">
 					<select id="room">
-				    	<option value="Badezimmer">Badezimmer</option>
+						<option value="Badezimmer">Badezimmer</option>
 						<option value="Buero">B&uuml;ro</option>
 						<option value="Esszimmer">Esszimmer</option>
 						<option value="Gang">Gang</option>
@@ -120,37 +120,40 @@
 						<option selected value="Wohnzimmer">Wohnzimmer</option>
 					</select>
 					<label>Raum</label>
-				  </div>
-			        <div class="input-field col s8">
-			          <input id="name_light" type="text" class="validate">
-			          <label for="name_light">Name</label>
-			        </div>
-		    </div>
+				</div>
+				<div class="input-field col s8">
+					<input id="name_light" type="text" class="validate">
+					<label for="name_light">Name</label>
+				</div>
+			</div>
 
 
-		    <div id="heater">
-			        <div class="input-field col s4">
-				    <select>
-				      <option value="1">Thermostat</option>
-				      <option value="2">Sensor</option>
-				    </select>
-				    <label>Type</label>
-				  </div>
-			        <div class="input-field col s8">
-			          <input id="name_heating" type="text" class="validate">
-			          <label for="name_heating">Name</label>
-			        </div>
-		    </div>
+			<div id="heater">
+				<div class="input-field col s4">
+					<select>
+						<option selected value="1">Thermostat</option>
+						<option value="2">Sensor</option>
+					</select>
+					<label>Type</label>
+				</div>
+				<div class="input-field col s8">
+					<input id="name_heating" type="text" class="validate">
+					<label for="name_heating">Name</label>
+				</div>
+			</div>
 
 
-		    <div id="media">
-		    	 
-		    </div>
+			<div id="media">
+				<div class="input-field col s12">
+					<input id="name_light" type="text" class="validate">
+					<label for="name_light">Name</label>
+				</div>
+			</div>
 		</div>
 		
 
 		<a onclick="createDevice()" class="btn">Add Device</a>
-    
+
 	</div>
 
 </body>
