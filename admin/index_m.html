@@ -106,8 +106,8 @@
 
 			var DevicePath = level0 + level1 + level2;
 
-			sendTo('eigene_datenpunkte.' + instance, "log", DevicePath);
-			location.reload();
+			sendTo('eigene_datenpunkte.' + instance, "log", value1.value);
+			//location.reload();
 		}
 
 	</script>
@@ -135,6 +135,7 @@
 			</div>
 
 			<div id="lamp">
+				<!-- Level 0 -->
 				<div class="input-field col s4">
 					<select id="room">
 						<option value="Badezimmer">Badezimmer</option>
@@ -147,29 +148,39 @@
 					</select>
 					<label>Raum</label>
 				</div>
+				<!-- Level 1 -->
 				<div class="input-field col s8">
 					<input id="name_light" type="text" class="validate">
 					<label for="name_light">Name</label>
 				</div>
+				<!-- Level 3 -->
+
 			</div>
 
 
 			<div id="heater">
+				<!-- Level 0 -->
 				<div class="input-field col s4">
 					<select id="type">
-						<option selected value="Heizung">Thermostat</option>
+						<option selected value="Heizung">Heizung</option>
 						<option value="Sensoren">Sensor</option>
 					</select>
 					<label>Type</label>
 				</div>
+				<!-- Level 1 -->
 				<div class="input-field col s8">
 					<input id="name_heating" type="text" class="validate">
 					<label for="name_heating">Name</label>
 				</div>
+				<label>
+					<input type="checkbox" class="filled-in" checked="checked" id="value1"/>
+					<span>Filled in</span>
+				</label>
 			</div>
 
 
 			<div id="media">
+				<!-- Level 0 -->
 				<div class="input-field col s12">
 					<input id="name_media" type="text" class="validate">
 					<label for="name_media">Name</label>
@@ -178,12 +189,13 @@
 		</div>
 		
 		<div class="center-align">
-			<a onclick="createDevice()" class="btn valign-wrapper">
-				<i class="material-icons">add</i>
-				Add Device
-			</a>
+			<label>
+				<a onclick="createDevice()" class="btn">
+					<i class="material-icons left">add</i>
+					Add Device
+				</a>	
+			</label>
 		</div>
-		
 	</div>
 
 </body>
