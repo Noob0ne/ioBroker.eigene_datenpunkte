@@ -74,6 +74,10 @@
 			activeTab=activeTab_new;
 		}
 
+		function refreshActiveTab(){
+			alert("activeTab_new");
+			activeTab="test123";
+		}
 		function refreshActiveTab(aktiveTab_new){
 			alert(activeTab_new);
 			activeTab=activeTab_new;
@@ -101,7 +105,7 @@
 		<div class="row">
 		    <div class="col s12">
 		      <ul class="tabs">
-		        <li class="tab col s4"><a href="#test1" onclick="refreshActiveTab(test)">Lampen</a></li>
+		        <li class="tab col s4"><a href="#test1" onclick="refreshActiveTab()">Lampen</a></li>
 		        <li class="tab col s4"><a href="#test2" onclick="refreshActiveTab('heating')">Heizen</a></li>
 		        <li class="tab col s4"><a href="#test3" onclick="refreshActiveTab('media')">Medien</a></li>
 		      </ul>
