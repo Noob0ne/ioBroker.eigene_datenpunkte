@@ -71,7 +71,7 @@
 		let activeTab = 'lamp';
 
 		function refreshActiveTab(aktiveTab_new){
-			activeTab = activeTab_new;
+			let activeTab = activeTab_new;
 			sendTo('eigene_datenpunkte.' + instance, "log", activeTab);
 		}
 
