@@ -80,9 +80,6 @@
 				<img src="eigene_datenpunkte.png" class="logo">
 			</div>
 		</div>
-		<div align="center">
-			<h5 id="headline">neuen eigenen Datenpunkt anlegen</h5>
-		</div>
 
 		<ul class="collapsible">
 		  <li>
@@ -103,28 +100,6 @@
 		
 		<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
     
-		<label for="drop1">option1</label>
-		<select id="drop1">
-		</select>
-
-
-		<div class="row">
-			<div class="">
-				<input type="button" value="Klick mich" onclick="buttonclicked()">
-			</div>
-
-			<div class="col s6 input-field">
-				<input type="text" class="value" id="option2" />
-				<label for="option2" class="translate">option2</label>
-			</div>
-
-			<div class="col s6 input-field">
-				<input type="text" class="value" id="option3" />
-				<label for="option3" class="translate">option3</label>
-			</div>
-
-		</div>
-
 	</div>
 
 </body>
@@ -132,7 +107,7 @@
 
 
 <script type="text/javascript">
-		trigger("channel",fillFirstDropdown);
+		// trigger("channel",fillFirstDropdown);
 		function fillFirstDropdown(content){
 			drop1.innerHTML="<option value=\""+content+"\">"+content+"</option>";
 		}
