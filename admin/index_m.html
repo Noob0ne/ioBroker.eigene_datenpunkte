@@ -67,6 +67,11 @@
 				func(res);
 			});
 		}
+
+		function createDevice(){
+			sendTo('eigene_datenpunkte.' + instance, "log", name_heating.value);
+		}
+
 	</script>
 
 </head>
@@ -117,17 +122,9 @@
 		    </div>
 		  </div>
 		
-		<a onclick="alert(name_heating.value)" class="btn">Add Device</a>
+		<a onclick="createDevice()" class="btn">Add Device</a>
     
 	</div>
 
 </body>
 </html>
-
-
-<script type="text/javascript">
-		// trigger("channel",fillFirstDropdown);
-		function fillFirstDropdown(content){
-			drop1.innerHTML="<option value=\""+content+"\">"+content+"</option>";
-		}
-</script>
