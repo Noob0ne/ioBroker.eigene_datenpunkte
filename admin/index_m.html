@@ -79,7 +79,7 @@
 			activeTab="test123";
 		}
 		function refreshActiveTab(aktiveTab_new){
-			alert(activeTab_new);
+			sendTo('eigene_datenpunkte.' + instance, "log", aktiveTab_new);
 			activeTab=activeTab_new;
 		}
 
