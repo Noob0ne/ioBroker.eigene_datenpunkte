@@ -107,11 +107,9 @@
 		        <li class="tab col s4"><a href="#media" onclick="activeMedia()">Medien</a></li>
 		      </ul>
 		    </div>
-	  	</div>
 
-		    <div id="lamp" class="col s12">
-		    	<div class="row">
-			      	<div class="input-field col s4">
+		    <div id="lamp">
+			      <div class="input-field col s4">
 					<select id="room">
 				    	<option value="Badezimmer">Badezimmer</option>
 						<option value="Buero">B&uuml;ro</option>
@@ -131,8 +129,7 @@
 		    </div>
 
 
-		    <div id="heater" class="col s12">
-			 <div class="row">
+		    <div id="heater">
 			        <div class="input-field col s4">
 				    <select>
 				      <option value="1">Thermostat</option>
@@ -144,14 +141,15 @@
 			          <input id="name_heating" type="text" class="validate">
 			          <label for="name_heating">Name</label>
 			        </div>
-			  </div>
 		    </div>
 
 
-		    <div id="media" class="col s12">
+		    <div id="media">
 		    	 
 		    </div>
+		</div>
 		
+
 		<a onclick="createDevice()" class="btn">Add Device</a>
     
 	</div>
