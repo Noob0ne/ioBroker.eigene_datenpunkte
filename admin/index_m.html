@@ -86,17 +86,17 @@
 		function createDevice(){
 			switch (level0){
 				case 'Lampensteuerung':
-					level1 = '.' + room.value;
-					level2 = '.' + name_light.value;
-					break;
+				level1 = '.' + room.value;
+				level2 = '.' + name_light.value;
+				break;
 				case 'Heizungssteuerung':
-					level1 = '.' + type.value;
-					level2 = '.' + name_heating.value;
-					break;
+				level1 = '.' + type.value;
+				level2 = '.' + name_heating.value;
+				break;
 				case 'Mediensteuerung':
-					level1 = '';
-					level2 = '.' + name_media.value;
-					break;
+				level1 = '';
+				level2 = '.' + name_media.value;
+				break;
 			}
 
 			if (level2 == '.') {
@@ -177,12 +177,13 @@
 			</div>
 		</div>
 		
-
-		<a onclick="createDevice()" class="btn center-align valign-wrapper">
-			<i class="material-icons">add</i>
-			Add Device
-          </a>
-
+		<div class="center-align">
+			<a onclick="createDevice()" class="btn valign-wrapper">
+				<i class="material-icons">add</i>
+				Add Device
+			</a>
+		</div>
+		
 	</div>
 
 </body>
