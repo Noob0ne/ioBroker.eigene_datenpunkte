@@ -67,11 +67,13 @@
 				func(res);
 			});
 		}
+
 		var activeTab='lamp';
 		function refreshActiveTab(aktiveTab_new){
 			alert(activeTab_new);
 			activeTab=activeTab_new;
 		}
+
 		function createDevice(){
 			sendTo('eigene_datenpunkte.' + instance, "log", activeTab);
 		}
@@ -132,3 +134,10 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+	function refreshActiveTab(aktiveTab_new){
+		alert(activeTab_new);
+		activeTab=activeTab_new;
+	}
+</script>
