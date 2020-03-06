@@ -69,12 +69,11 @@
 		}
 
 		function refreshActiveTab(aktiveTab_new){
-			sendTo('eigene_datenpunkte.' + instance, "log", aktiveTab_new);
 			activeTab=activeTab_new;
+			sendTo('eigene_datenpunkte.' + instance, "log", activeTab);
 		}
 
 		function createDevice(){
-			alert(activeTab);
 			sendTo('eigene_datenpunkte.' + instance, "log", activeTab);
 		}
 
