@@ -81,7 +81,18 @@
 		}
 
 		function createDevice(){
-			sendTo('eigene_datenpunkte.' + instance, "log", room.value);
+			switch (level0){
+				case 'Lampensteuerung':
+					level1 = room.value;
+					break;
+				case 'Heizungssteuerung':
+					level1 = type.value;
+					break;
+				case 'Mediensteuerung':
+					break;
+			}
+
+			sendTo('eigene_datenpunkte.' + instance, "log", level0+level1);
 		}
 
 	</script>
@@ -121,7 +132,7 @@
 					</select>
 					<label>Raum</label>
 				</div>
-				<div class="input-field col s7">
+				<div class="input-field col s8">
 					<input id="name_light" type="text" class="validate">
 					<label for="name_light">Name</label>
 				</div>
@@ -130,13 +141,13 @@
 
 			<div id="heater">
 				<div class="input-field col s4">
-					<select>
+					<select id="type">
 						<option selected value="1">Thermostat</option>
 						<option value="2">Sensor</option>
 					</select>
 					<label>Type</label>
 				</div>
-				<div class="input-field col s7">
+				<div class="input-field col s8">
 					<input id="name_heating" type="text" class="validate">
 					<label for="name_heating">Name</label>
 				</div>
@@ -144,7 +155,7 @@
 
 
 			<div id="media">
-				<div class="input-field col s11">
+				<div class="input-field col s12">
 					<input id="name_light" type="text" class="validate">
 					<label for="name_light">Name</label>
 				</div>
