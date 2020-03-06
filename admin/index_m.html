@@ -85,16 +85,22 @@
 		function createDevice(){
 			switch (level0){
 				case 'Lampensteuerung':
-					level1 = room.value;
+					level1 = '.' + room.value;
+					level2 = '.' + name_light.value;
 					break;
 				case 'Heizungssteuerung':
-					level1 = type.value;
+					level1 = '.' + type.value;
+					level2 = '.' + name_heating.value;
 					break;
 				case 'Mediensteuerung':
+					level1 = '';
+					level2 = '.' + name_media.value;
 					break;
 			}
 
-			sendTo('eigene_datenpunkte.' + instance, "log", level0 + "." + level1);
+			var DevicePath = level0 + level1 + level2;
+
+			sendTo('eigene_datenpunkte.' + instance, "log", DevicePath);
 		}
 
 	</script>
@@ -158,8 +164,8 @@
 
 			<div id="media">
 				<div class="input-field col s12">
-					<input id="name_light" type="text" class="validate">
-					<label for="name_light">Name</label>
+					<input id="name_media" type="text" class="validate">
+					<label for="name_media">Name</label>
 				</div>
 			</div>
 		</div>
