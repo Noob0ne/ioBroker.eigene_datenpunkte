@@ -69,15 +69,15 @@
 		}
 
 		function activeLamp(){
-			activeTab = 'lamp';
+			level0 = 'Lampensteuerung';
 		}
 
 		function activeHeater(){
-			activeTab = 'heater';
+			level0 = 'Heizungssteuerung';
 		}
 
 		function activeMedia(){
-			activeTab = 'media';
+			level0 = 'Mediensteuerung';
 		}
 
 		function refreshActiveTab(aktiveTab_new){
@@ -112,9 +112,31 @@
 		        <li class="tab col s4"><a href="#media" onclick="activeMedia()">Medien</a></li>
 		      </ul>
 		    </div>
+
 		    <div id="lamp" class="col s12">
-		    	Lampensteuerung
+		    	<div class="row">
+			      <div class="row">
+			        <div class="input-field col s4">
+				    <select>
+				      <option selected value="Wohnzimmer">Wohnzimmer</option>
+				      <option value="Buero">B&uuml;ro</option>
+				      <option value="Badezimmer">Badezimmer</option>
+  				      <option value="Kueche">K&uuml;che</option>
+  				      <option value="Esszimmer">Esszimmer</option>
+  				      <option value="Gang">Gang</option>
+  				      <option value="Schlafzimmer">Schlafzimmer</option>
+				    </select>
+				    <label>Raum</label>
+				  </div>
+			        <div class="input-field col s8">
+			          <input id="name_light" type="text" class="validate">
+			          <label for="name_light">Name</label>
+			        </div>
+			      </div>
+			  </div>
 		    </div>
+
+
 		    <div id="heater" class="col s12">
 			 <div class="row">
 			      <div class="row">
@@ -132,6 +154,8 @@
 			      </div>
 			  </div>
 		    </div>
+
+
 		    <div id="media" class="col s12">
 		    	 
 		    </div>
