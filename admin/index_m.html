@@ -98,6 +98,10 @@
 					break;
 			}
 
+			if (level2 == '.') {
+				return; //Funktion wird abgebrochen
+			}
+
 			var DevicePath = level0 + level1 + level2;
 
 			sendTo('eigene_datenpunkte.' + instance, "log", DevicePath);
