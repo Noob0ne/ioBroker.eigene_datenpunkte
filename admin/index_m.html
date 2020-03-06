@@ -116,7 +116,7 @@
 
 <body>
 
-	<div class="m adapter-container">
+	<div class="m adapter-container center-align">
 
 		<div class="row">
 			<div class="col s5 m4 l2">
@@ -173,7 +173,7 @@
 					<label for="name_heating">Name</label>
 				</div>
 				<label>
-					<input type="checkbox" class="filled-in" checked="checked" id="value1"/>
+					<input type="checkbox" checked="checked" id="value1" onchange="value1.value='off'" />
 					<span>Filled in</span>
 				</label>
 			</div>
@@ -188,14 +188,13 @@
 			</div>
 		</div>
 		
-		<div class="center-align">
-			<label>
-				<a onclick="createDevice()" class="btn">
-					<i class="material-icons left">add</i>
-					Add Device
-				</a>	
-			</label>
-		</div>
+		<label>
+			<a onclick="createDevice()" class="btn">
+				<i class="material-icons left">add</i>
+				Add Device
+			</a>	
+		</label>
+
 	</div>
 
 </body>
