@@ -131,6 +131,20 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 	}
 
+	static createDevice(input){
+			this.log.info(input)
+			this.setObjectAsync("testVariable", {
+				type: "state",
+				common: {
+					name: "testVariable",
+					type: "boolean",
+					role: "indicator",
+					read: true,
+					write: true,
+				},
+				native: {},
+			});
+		}
 
 	/**
 	* Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
@@ -158,21 +172,6 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 
 	}
-
-	static createDevice(input){
-			this.log.info(input)
-			this.setObjectAsync("testVariable", {
-				type: "state",
-				common: {
-					name: "testVariable",
-					type: "boolean",
-					role: "indicator",
-					read: true,
-					write: true,
-				},
-				native: {},
-			});
-		}
 }
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
