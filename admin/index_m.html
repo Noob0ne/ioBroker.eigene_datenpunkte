@@ -144,7 +144,7 @@
 				};
 				stateData.common.type = type;
 				stateData.common.name = name;
-				sendTo('eigene_datenpunkte.' + instance, "create", { "name":path + '.' + name, "data":data});
+				sendTo('eigene_datenpunkte.' + instance, "create", { "name":path + '.' + name, "data":stateData});
 			}
 		}
 
