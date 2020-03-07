@@ -129,6 +129,7 @@
 				},
 				native: {},
 			};
+			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ JSON.stringify(deviceData) + " created");
 			sendTo('eigene_datenpunkte.' + instance, "create", { "name":path, "data":deviceData});
 			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created");
 
