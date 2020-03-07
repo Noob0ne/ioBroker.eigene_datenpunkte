@@ -148,19 +148,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				this.log.info("input")
-				this.setObjectAsync("testVariable", {
-					type: "state",
-					common: {
-						name: "testVariable",
-						type: "boolean",
-						role: "indicator",
-						read: true,
-						write: true,
-					},
-					native: {},
-				});
-				this.log.info(obj.message+" wurde erstellt!")
+				createDevice("muhDevice");
 				break;
 				default:
 				this.log.info('command <'+ obj.command +'> is unkown');
@@ -169,7 +157,9 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info(obj+" is not an Object");
 		}
 
-		function createVariable(input){
+	}
+
+	static createVariable(input){
 			this.log.info(input)
 			this.setObjectAsync("testVariable", {
 				type: "state",
@@ -183,9 +173,6 @@ class EigeneDatenpunkte extends utils.Adapter {
 				native: {},
 			});
 		}
-
-
-	}
 }
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
