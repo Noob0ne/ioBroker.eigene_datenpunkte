@@ -59,10 +59,6 @@
 			callback(obj);
 		}
 
-		function buttonclicked(){
-			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
-		}
-
 		function trigger(type,func){
 			sendTo('eigene_datenpunkte.'+ instance, "get", type , (res) => {
 				func(res);
@@ -89,35 +85,9 @@
 
 
 		function createDevice(){
-			switch (level0){
-				case 'Lampensteuerung':
-				level1 = '.' + room.value;
-				level2 = '.' + name_light.value;
-				break;
-				case 'Heizungssteuerung':
-				level1 = ''
-				level2 = '.' + name_heating.value;
-				break;
-				case 'Mediensteuerung':
-				level1 = '';
-				level2 = '.' + name_media.value;
-				break;
-				case 'Sensoren':
-				level1 = '.' + type.value;;
-				level2 = '.' + name_sensor.value;
-				break;
-			}
 
-			if (level2 == '.') {
-				alert("invalid name");
-				return; //Funktion wird abgebrochen
-			}
-
-			var path = level0 + level1 + level2;
-
-
-			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created");
-
+			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
+			
 		}
 
 	</script>
