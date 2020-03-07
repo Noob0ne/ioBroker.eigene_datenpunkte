@@ -76,32 +76,32 @@
 			var type = "";
 			switch (level0){
 				case 'Lichtsteuerung':
-				level1 = '.' + room.value;
-				level2 = '.' + name_light.value;
+				level1 = '.' + room.value + '.';
+				level2 = name_light.value;
 				role = "light";
 				type = lamp_type;
 				break;
 				case 'Heizungssteuerung':
-				level1 = ''
-				level2 = '.' + name_heating.value;
+				level1 = '.'
+				level2 = name_heating.value;
 				role = "thermostat";
 				type = "thermostat";
 				break;
 				case 'Mediensteuerung':
-				level1 = '';
-				level2 = '.' + name_media.value;
+				level1 = '.';
+				level2 = name_media.value;
 				role = "media";
 				type = "media";
 				break;
 				case 'Sensoren':
-				level1 = '.' + sensor_channel.value;
-				level2 = '.' + name_sensor.value;
+				level1 = '.' + sensor_channel.value + '.';
+				level2 = name_sensor.value;
 				role = "sensor";
 				type = sensor_type;
 				break;
 			}
 
-			if (level2 == '.') {
+			if (level2 == '') {
 				alert("invalid name");
 				return; //Funktion wird abgebrochen
 			}
@@ -109,7 +109,7 @@
 			var path = level0 + level1 + level2;
 
 			var deviceData= {type: "device", common: { name: "testVariable", role: "light", }, native: {}, };
-			deviceData.name = "Daten "+level2;
+			deviceData,common.name = "Daten "+level2;
 			deviceData.common.role = role;
 
 
@@ -167,6 +167,7 @@
 					return { "name":path + '.' + name, "data":stateData};
 				}
 			}
+			location.reload();
 		}
 
 	</script>
