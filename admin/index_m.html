@@ -114,8 +114,18 @@
 			}
 
 			var DevicePath = level0 + level1 + level2;
-
-			sendTo('eigene_datenpunkte.' + instance, "create", DevicePath);
+			var data= {
+				type: "state",
+				common: {
+					name: "testVariable",
+					type: "boolean",
+					role: "indicator",
+					read: true,
+					write: true,
+				},
+				native: {},
+			};
+			sendTo('eigene_datenpunkte.' + instance, "create", { "name":"John", "data":data});
 			//location.reload();
 		}
 
