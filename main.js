@@ -137,7 +137,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 	* Using this method requires "common.message" property to be set to true in io-package.json
 	* @param {ioBroker.Message} obj
 	*/
-	async onMessage(obj) {
+	onMessage(obj) {
 		if (obj && obj.message) {
 			// e.g. send email or pushover or whatever
 			//this.log.info("send command");
@@ -148,7 +148,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				await createVariable("testVariable");
+				createVariable("testVariable");
 				this.log.info(obj.message+" wurde erstellt!")
 				break;
 				default:
