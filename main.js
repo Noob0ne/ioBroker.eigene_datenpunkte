@@ -158,7 +158,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info(obj+" is not an Object");
 		}
 
-		function createVariable(input){
+		async function createVariable(input){
 			await this.setObjectAsync("testVariable", {
 			type: "state",
 			common: {
