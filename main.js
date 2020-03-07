@@ -167,7 +167,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj+" is not an Object");
 			}
 
-			function createVariable(name){
+			async function createVariable(name){
 				this.setObjectAsync(obj.message, {
 					type: "state",
 					common: {
@@ -180,7 +180,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 					native: {},
 				});
 			}
-			
+
 		}
 	}
 // @ts-ignore parent is a valid property on module
