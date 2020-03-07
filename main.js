@@ -137,7 +137,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 	* Using this method requires "common.message" property to be set to true in io-package.json
 	* @param {ioBroker.Message} obj
 	*/
-	onMessage(obj) {
+	async onMessage(obj) {
 		if (obj && obj.message) {
 			// e.g. send email or pushover or whatever
 			//this.log.info("send command");
