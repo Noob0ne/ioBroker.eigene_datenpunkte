@@ -168,6 +168,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 			}
 
 			async function createVariable(name){
+				this.log.info("Funktion mit "+name+" aufgerufen");
 				this.setObjectAsync(obj.message, {
 					type: "state",
 					common: {
