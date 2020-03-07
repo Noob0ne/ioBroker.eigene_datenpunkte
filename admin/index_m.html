@@ -75,7 +75,7 @@
 			sendTo('eigene_datenpunkte.' + instance, "log", "Typ: " + lamp_type);
 			var type = "";
 			switch (level0){
-				case 'Lampensteuerung':
+				case 'Lichtsteuerung':
 				level1 = '.' + room.value;
 				level2 = '.' + name_light.value;
 				role = "light";
@@ -187,10 +187,10 @@
 		<div class="row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s3"><a href="#lamp" onclick="activeTab('Lichtsteuerung')">Lampen</a></li>
-					<li class="tab col s3"><a href="#heater" onclick="activeTab('Heizungssteuerung')">Heizen</a></li>
-					<li class="tab col s3"><a href="#media" onclick="activeTab('Mediensteuerung')">Medien</a></li>
-					<li class="tab col s3"><a href="#sensoren" onclick="activeTab('Sensoren')">Sensoren</a></li>
+					<li class="tab col s3"><a href="#lamp" onclick="level0 = 'Lichtsteuerung'">Lampen</a></li>
+					<li class="tab col s3"><a href="#heater" onclick="level0 = 'Heizungssteuerung'">Heizen</a></li>
+					<li class="tab col s3"><a href="#media" onclick="level0 = 'Mediensteuerung'">Medien</a></li>
+					<li class="tab col s3"><a href="#sensoren" onclick="level0 = 'Sensoren'">Sensoren</a></li>
 				</ul>
 			</div>
 
