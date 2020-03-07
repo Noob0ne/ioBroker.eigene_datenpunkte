@@ -114,8 +114,8 @@
 
 
 			sendTo('eigene_datenpunkte.' + instance, "create", { "name": path, "data": deviceData });
-			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created");
-			createStates("lampe_dimmable");
+			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created (" + type +")");
+			createStates(type);
 
 			function createStates(type){
 				sendTo('eigene_datenpunkte.' + instance, "log", "type of device : "+ type);
