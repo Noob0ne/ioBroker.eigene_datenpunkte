@@ -200,14 +200,22 @@
 					<label for="name_media">Name</label>
 				</div>
 			</div>
-		</div>
 
-		<div id="sensoren">
-			<!-- Level 0 -->
-			<!-- Level 1 -->
-			<div class="input-field col s12">
-				<input id="name_sensor" type="text" class="validate">
-				<label for="name_sensor">Name</label>
+			<div id="sensoren">
+				<!-- Level 0 -->
+				<div class="input-field col s4">
+					<select id="room">
+						<option value="Bewegungsmelder" selected>Bewegungsmelder</option>
+						<option value="Fenstersensor">Fenstersensor</option>
+						<option value="Thermometer">Thermometer</option>
+					</select>
+					<label>Typ</label>
+				</div>
+				<!-- Level 1 -->
+				<div class="input-field col s8">
+					<input id="name_sensor" type="text" class="validate">
+					<label for="name_sensor">Name</label>
+				</div>
 			</div>
 		</div>
 
