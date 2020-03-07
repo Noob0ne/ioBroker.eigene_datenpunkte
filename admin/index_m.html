@@ -131,23 +131,7 @@
 			};
 			sendTo('eigene_datenpunkte.' + instance, "create", { "name":path, "data":deviceData});
 			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created");
-			createState("ONOFF","boolean");
 
-			function createState(name, type){
-				var stateData= {
-					type: "state",
-					common: {
-						name: "testVariable",
-						type: "",
-						read: true,
-						write: true,
-					},
-					native: {},
-				};
-				stateData.common.type = type;
-				stateData.common.name = name;
-				sendTo('eigene_datenpunkte.' + instance, "create", { "name":path + '.' + name, "data":stateData});
-			}
 		}
 
 	</script>
