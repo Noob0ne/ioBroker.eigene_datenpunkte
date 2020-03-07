@@ -62,7 +62,6 @@
 	"instanceObjects": [
 		{
 			"_id": "Lichtsteuerung",
-			"type": "channel",
 			"common": {
 				"name":  "Lichtsteuerung"
 			},
@@ -70,7 +69,6 @@
 		},
 		{
 			"_id": "Heizungssteuerung",
-			"type": "channel",
 			"common": {
 				"name":  "Heizungssteuerung"
 			},
@@ -78,7 +76,6 @@
 		},
 		{
 			"_id": "Mediensteuerung",
-			"type": "channel",
 			"common": {
 				"name":  "Mediensteuerung"
 			},
