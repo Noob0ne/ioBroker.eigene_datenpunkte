@@ -82,7 +82,9 @@
 		function activeSensor(){
 			level0 = 'Sensoren';
 		}
-
+		function lamp_type(newType){
+			sendTo('eigene_datenpunkte.' + instance, "log", "LampType : "+ newType);
+		}
 
 		function createDevice(){
 
@@ -227,15 +229,15 @@
 				</div>
 				<!-- Level 3 -->
 				<label class="col s4">
-					<input name="lamp_select" id="onoff" type="radio" value="lampe" />
+					<input name="lamp_select" id="onoff" type="radio" value="lampe" onclick="lamp_type('onOff')" />
 					<span>Ein/Aus</span>
 				</label>
 				<label class="col s4">
-					<input name="lamp_select" id="dimmable" type="radio" value="lampe_dimmable" checked />
+					<input name="lamp_select" id="dimmable" type="radio" value="lampe_dimmable" onclick="lamp_type('dimmable')" checked />
 					<span>Dimmbar</span>
 				</label>
 				<label class="col s4">
-					<input name="lamp_select" id="rgb" type="radio" value="lampe_rgb" />
+					<input name="lamp_select" id="rgb" type="radio" value="lampe_rgb" onclick="lamp_type('rgb')" />
 					<span>Farbspektrum</span>
 				</label>
 			</div>
@@ -262,7 +264,7 @@
 			<div id="sensoren">
 				<!-- Level 0 -->
 				<div class="input-field col s4">
-					<select id="sensor_type">
+					<select id="sensor_type" onchange="sensor_type(sensor_type.value)">
 						<option value="motion" name="Bewegungsmelder" selected>Bewegungsmelder</option>
 						<option value="window" name="Fenstersensor">Fenstersensor</option>
 						<option value="temperature" name="Temperatursensor">Temperatursensor</option>
