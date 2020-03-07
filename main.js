@@ -16,22 +16,22 @@ class EigeneDatenpunkte extends utils.Adapter {
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
-	constructor(options) {
-		super({
-			...options,
-			name: "eigene_datenpunkte",
-		});
-		this.on("ready", this.onReady.bind(this));
-		this.on("objectChange", this.onObjectChange.bind(this));
-		this.on("stateChange", this.onStateChange.bind(this));
-		this.on("message", this.onMessage.bind(this));
-		this.on("unload", this.onUnload.bind(this));
-	}
+	 constructor(options) {
+	 	super({
+	 		...options,
+	 		name: "eigene_datenpunkte",
+	 	});
+	 	this.on("ready", this.onReady.bind(this));
+	 	this.on("objectChange", this.onObjectChange.bind(this));
+	 	this.on("stateChange", this.onStateChange.bind(this));
+	 	this.on("message", this.onMessage.bind(this));
+	 	this.on("unload", this.onUnload.bind(this));
+	 }
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
-	async onReady() {
+	 async onReady() {
 		// Initialize your adapter here
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
@@ -91,23 +91,23 @@ class EigeneDatenpunkte extends utils.Adapter {
 	 * Is called when adapter shuts down - callback has to be called under any circumstances!
 	 * @param {() => void} callback
 	 */
-	onUnload(callback) {
-		try {
-			this.log.info("cleaned everything up...");
-			callback();
-		} catch (e) {
-			callback();
-		}
-	}
+	 onUnload(callback) {
+	 	try {
+	 		this.log.info("cleaned everything up...");
+	 		callback();
+	 	} catch (e) {
+	 		callback();
+	 	}
+	 }
 
 	/**
 	 * Is called if a subscribed object changes
 	 * @param {string} id
 	 * @param {ioBroker.Object | null | undefined} obj
 	 */
-	onObjectChange(id, obj) {
-		this.log.info(`object ${id} aktualisiert: ${JSON.stringify(obj)}`);
-		if (obj) {
+	 onObjectChange(id, obj) {
+	 	this.log.info(`object ${id} aktualisiert: ${JSON.stringify(obj)}`);
+	 	if (obj) {
 			// The object was changed
 			this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
 		} else {
@@ -121,8 +121,8 @@ class EigeneDatenpunkte extends utils.Adapter {
 	 * @param {string} id
 	 * @param {ioBroker.State | null | undefined} state
 	 */
-	onStateChange(id, state) {
-		if (state) {
+	 onStateChange(id, state) {
+	 	if (state) {
 			// The state was changed
 			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 		} else {
@@ -145,21 +145,11 @@ class EigeneDatenpunkte extends utils.Adapter {
 			// if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
 			switch (obj.command){
 				case "log":
-					this.log.info(obj.message);
-					break;
+				this.log.info(obj.message);
+				break;
 				case "create":
-					this.setObjectAsync(obj.message, {
-						type: "state",
-						common: {
-							name: "testVariable",
-							type: "boolean",
-							role: "indicator",
-							read: true,
-							write: true,
-						},
-						native: {},
-					});
-					break;
+				createVariable("testVariable"):
+				break;
 				case "get":
 					// ONLY change obj.message!
 					this.getObject('Lichtsteuerung', function (err, obj) {
@@ -169,37 +159,37 @@ class EigeneDatenpunkte extends utils.Adapter {
 						return obj.common.name;
 					}), obj.callback);
 					break;
-				default:
+					default:
 					this.log.info('command <'+ obj.command +'> is unkown');
-			}
-		}else{
-			this.log.info(obj+" is not an Object");
-		}
-		function exporting(message) {
-			switch (message){
-				case "channel":
-					this.getObject('Lichtsteuerung', function (err, obj) {
-						this.log.info(obj.common.name);
-					}); 
-					this.log.info("Morgen dort");
-					break;
-				default:
-					return false;
+				}
+			}else{
+				this.log.info(obj+" is not an Object");
 			}
 		}
+
 	}
 
-}
-
-
+	function createVariable(name){
+		this.setObjectAsync(obj.message, {
+			type: "state",
+			common: {
+				name: this.name,
+				type: "boolean",
+				role: "indicator",
+				read: true,
+				write: true,
+			},
+			native: {},
+		});
+	}
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
 	// Export the constructor in compact mode
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
-	module.exports = (options) => new EigeneDatenpunkte(options);
-} else {
+	 module.exports = (options) => new EigeneDatenpunkte(options);
+	} else {
 	// otherwise start the instance directly
 	new EigeneDatenpunkte();
 }
