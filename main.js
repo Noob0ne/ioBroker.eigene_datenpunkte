@@ -159,7 +159,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 
 	}
 
-	static createVariable(input){
+	static createDevice(input){
 			this.log.info(input)
 			this.setObjectAsync("testVariable", {
 				type: "state",
