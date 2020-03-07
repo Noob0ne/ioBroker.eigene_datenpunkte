@@ -68,11 +68,10 @@
 
 
 		var level0 = 'Lichtsteuerung';
-		var lamp_type = 'lampe';
+		var lamp_type = 'lampe_dimmable';
 		var sensor_type = 'motion';
 
 		function createDevice(){
-			sendTo('eigene_datenpunkte.' + instance, "log", "Typ: " + lamp_type);
 			var type = "";
 			switch (level0){
 				case 'Lichtsteuerung':
@@ -109,7 +108,7 @@
 			var path = level0 + level1 + level2;
 
 			var deviceData= {type: "device", common: { name: "testVariable", role: "light", }, native: {}, };
-			deviceData,common.name = "Daten "+level2;
+			deviceData.common.name = "Daten "+level2;
 			deviceData.common.role = role;
 
 
@@ -118,7 +117,6 @@
 			createStates(type);
 
 			function createStates(type){
-				sendTo('eigene_datenpunkte.' + instance, "log", "type of device : "+ type);
 				switch (type){
 					// Lampen
 					case "lampe_rgb":
@@ -252,9 +250,9 @@
 				<!-- Level 0 -->
 				<div class="input-field col s4">
 					<select id="sensor_channel">
-						<option onclick="sensor_type('motion')" value="Bewegungsmelder" name="Bewegungsmelder" selected>Bewegungsmelder</option>
-						<option onclick="sensor_type('window')" value="Fenstersensor" name="Fenstersensor">Fenstersensor</option>
-						<option onclick="sensor_type('temperature')" value="Temperatursensor" name="Temperatursensor">Temperatursensor</option>
+						<option onclick="sensor_type = 'motion'" value="Bewegungsmelder" name="Bewegungsmelder" selected>Bewegungsmelder</option>
+						<option onclick="sensor_type = 'window'" value="Fenstersensor" name="Fenstersensor">Fenstersensor</option>
+						<option onclick="sensor_type = 'temperature'" value="Temperatursensor" name="Temperatursensor">Temperatursensor</option>
 					</select>
 					<label>Typ</label>
 				</div>
