@@ -106,7 +106,7 @@
 				type = "media";
 				break;
 				case 'Sensoren':
-				level1 = '.' + sensor_type.name;
+				level1 = '.' + document.querySelector('input[name="sensor_type"]:selected').name;
 				level2 = '.' + name_sensor.value;
 				role = "sensor";
 				type = sensor_type.value;
@@ -121,6 +121,7 @@
 			var path = level0 + level1 + level2;
 
 			var deviceData= {type: "device", common: { name: "testVariable", role: "light", }, native: {}, };
+			deviceData.name = "Daten "+level2;
 			deviceData.common.role = role;
 
 
@@ -129,6 +130,7 @@
 			createStates("lampe_dimmable");
 
 			function createStates(type){
+				sendTo('eigene_datenpunkte.' + instance, "log", "type of device : "+ type);
 				switch (type){
 					// Lampen
 					case "lampe_rgb":
@@ -261,9 +263,9 @@
 				<!-- Level 0 -->
 				<div class="input-field col s4">
 					<select id="sensor_type">
-						<option id="sensor_type1" value="motion" name="Bewegungsmelder" selected>Bewegungsmelder</option>
-						<option id="sensor_type2" value="window" name="Fenstersensor">Fenstersensor</option>
-						<option id="sensor_type3" value="temperature" name="Temperatursensor">Temperatursensor</option>
+						<option value="motion" name="Bewegungsmelder" selected>Bewegungsmelder</option>
+						<option value="window" name="Fenstersensor">Fenstersensor</option>
+						<option value="temperature" name="Temperatursensor">Temperatursensor</option>
 					</select>
 					<label>Typ</label>
 				</div>
