@@ -40,7 +40,7 @@
 		"extIcon": "https://raw.githubusercontent.com/Noob0ne/ioBroker.eigene_datenpunkte/master/admin/eigene_datenpunkte.png",
 		"readme": "https://github.com/Noob0ne/ioBroker.eigene_datenpunkte/blob/master/README.md",
 		"loglevel": "info",
-		"mode": "none",
+		"mode": "deamon",
 		"type": "storage",
 		"compact": true,
 		"connectionType": "local",
