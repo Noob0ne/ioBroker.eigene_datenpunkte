@@ -69,17 +69,15 @@
 		function activeTab(newTab){
 			level0 = newTab;
 		}
-		function lamp_type(newType){
-			lamp_type=newType;
-		}
 		function sensor_type(newType){
 			sensor_type=newType;
 		}
 		sensor_type('Bewegungsmelder')
 		activeTab('Lampensteuerung');
-		lamp_type('dimmable');
+		lamp_type('lampe_dimmable');
 
 		function createDevice(){
+			sendTo('eigene_datenpunkte.' + instance, "log", "Typ: " + lamp_type);
 
 			switch (level0){
 				case 'Lampensteuerung':
@@ -222,15 +220,15 @@
 				</div>
 				<!-- Level 3 -->
 				<label class="col s4">
-					<input name="lamp_select" id="onoff" type="radio" value="lampe" onclick="lamp_type('onOff')" />
+					<input name="lamp_select" id="onoff" type="radio" value="lampe" onclick="lamp_type='lamp'" />
 					<span>Ein/Aus</span>
 				</label>
 				<label class="col s4">
-					<input name="lamp_select" id="dimmable" type="radio" value="lampe_dimmable" onclick="lamp_type('dimmable')" checked />
+					<input name="lamp_select" id="dimmable" type="radio" value="lampe_dimmable" onclick="lamp_type('lampe_dimmable')" checked />
 					<span>Dimmbar</span>
 				</label>
 				<label class="col s4">
-					<input name="lamp_select" id="rgb" type="radio" value="lampe_rgb" onclick="lamp_type('rgb')" />
+					<input name="lamp_select" id="rgb" type="radio" value="lampe_rgb" onclick="lamp_type('lampe_rgb')" />
 					<span>Farbspektrum</span>
 				</label>
 			</div>
