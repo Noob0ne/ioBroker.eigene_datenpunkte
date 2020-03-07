@@ -148,29 +148,33 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				createVariable("testVariable",this);
+				createVariable("testVariable");
 				this.log.info(obj.message+" wurde erstellt!")
 				break;
-				case "get":
-					// ONLY change obj.message!
-					this.getObject('Lichtsteuerung', function (err, obj) {
-						return obj.common.name;
-					}); 
-					this.sendTo(obj.from, obj.command, this.getObject('Lichtsteuerung', function (err, obj) {
-						return obj.common.name;
-					}), obj.callback);
-					break;
-					default:
-					this.log.info('command <'+ obj.command +'> is unkown');
-				}
-			}else{
-				this.log.info(obj+" is not an Object");
+				default:
+				this.log.info('command <'+ obj.command +'> is unkown');
 			}
-
-			
-
+		}else{
+			this.log.info(obj+" is not an Object");
 		}
+
+		function createVariable(input){
+			await this.setObjectAsync("testVariable", {
+			type: "state",
+			common: {
+				name: "testVariable",
+				type: "boolean",
+				role: "indicator",
+				read: true,
+				write: true,
+			},
+			native: {},
+		});
+		}
+
+
 	}
+}
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
 	// Export the constructor in compact mode
@@ -184,16 +188,21 @@ if (module.parent) {
 }
 
 function createVariable(name,adapter){
-	adapter.log.info("Funktion mit "+this.name+" aufgerufen");
-	adapter.setObjectAsync(this.name, {
-		type: "state",
-		common: {
-			name: this.name,
-			type: "boolean",
-			role: "indicator",
-			read: true,
-			write: true,
-		},
-		native: {},
-	});
+	adapter.log.info("Funktion mit "+name+" aufgerufen");
 }
+
+
+
+
+/** SAFE FOR LATER USE?
+
+// ONLY change obj.message!
+this.getObject('Lichtsteuerung', function (err, obj) {
+	return obj.common.name;
+}); 
+this.sendTo(obj.from, obj.command, this.getObject('Lichtsteuerung', function (err, obj) {
+	return obj.common.name;
+}), obj.callback);
+break;
+
+*/
