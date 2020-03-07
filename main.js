@@ -171,12 +171,6 @@ if (module.parent) {
 	new EigeneDatenpunkte();
 }
 
-function createVariable(name,adapter){
-	adapter.log.info("Funktion mit "+name+" aufgerufen");
-}
-
-
-
 
 /** SAFE FOR LATER USE?
 
