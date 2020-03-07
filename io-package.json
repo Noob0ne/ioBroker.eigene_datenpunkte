@@ -80,6 +80,13 @@
 				"name":  "Mediensteuerung"
 			},
 			"native": {}
+		},
+		{
+			"_id": "Sensoren",
+			"common": {
+				"name":  "diverse Sensoren"
+			},
+			"native": {}
 		}
 	]
 }
