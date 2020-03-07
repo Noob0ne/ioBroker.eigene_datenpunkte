@@ -148,7 +148,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				createVariable("testVariable");
+				await createVariable("testVariable");
 				this.log.info(obj.message+" wurde erstellt!")
 				break;
 				default:
@@ -158,9 +158,9 @@ class EigeneDatenpunkte extends utils.Adapter {
 			this.log.info(obj+" is not an Object");
 		}
 
-		async function createVariable(input){
+		function createVariable(input){
 			this.log.info(input)
-			await this.setObjectAsync("testVariable", {
+			this.setObjectAsync("testVariable", {
 				type: "state",
 				common: {
 					name: "testVariable",
