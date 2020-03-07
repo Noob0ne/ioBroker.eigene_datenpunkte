@@ -148,7 +148,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				createVariable("testVariable"):
+				createVariable("testVariable");
 				break;
 				case "get":
 					// ONLY change obj.message!
