@@ -167,7 +167,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj+" is not an Object");
 			}
 
-			async function createVariable(name){
+			function createVariable(name){
 				this.log.info("Funktion mit "+name+" aufgerufen");
 				this.setObjectAsync(obj.message, {
 					type: "state",
