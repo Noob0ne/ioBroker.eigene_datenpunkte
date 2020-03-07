@@ -95,7 +95,7 @@
 				level2 = '.' + name_light.value;
 				break;
 				case 'Heizungssteuerung':
-				level1 = '.' + type.value;
+				level1 = ''
 				level2 = '.' + name_heating.value;
 				break;
 				case 'Mediensteuerung':
@@ -103,7 +103,7 @@
 				level2 = '.' + name_media.value;
 				break;
 				case 'Sensoren':
-				level1 = '';
+				level1 = '.' + type.value;;
 				level2 = '.' + name_sensor.value;
 				break;
 			}
@@ -200,7 +200,7 @@
 			<div id="sensoren">
 				<!-- Level 0 -->
 				<div class="input-field col s4">
-					<select id="room">
+					<select id="type">
 						<option value="Bewegungsmelder" selected>Bewegungsmelder</option>
 						<option value="Fenstersensor">Fenstersensor</option>
 						<option value="Thermometer">Thermometer</option>
