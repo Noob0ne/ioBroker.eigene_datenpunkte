@@ -99,16 +99,16 @@
 				level1 = ''
 				level2 = '.' + name_heating.value;
 				role = "thermostat";
-								type = "thermostat";
+				type = "thermostat";
 				break;
 				case 'Mediensteuerung':
 				level1 = '';
 				level2 = '.' + name_media.value;
 				role = "media";
-								type = "media";
+				type = "media";
 				break;
 				case 'Sensoren':
-				level1 = '.' + sensor_type.value;;
+				level1 = '.' + sensor_type.name;
 				level2 = '.' + name_sensor.value;
 				role = "sensor";
 				type = sensor_type.value;
@@ -263,9 +263,9 @@
 				<!-- Level 0 -->
 				<div class="input-field col s4">
 					<select id="sensor_type">
-						<option value="motion" selected>Bewegungsmelder</option>
-						<option value="window">Fenstersensor</option>
-						<option value="temperature">Thermometer</option>
+						<option id="sensor_type1" value="motion" name="Bewegungsmelder" selected>Bewegungsmelder</option>
+						<option id="sensor_type2" value="window" name="Fenstersensor">Fenstersensor</option>
+						<option id="sensor_type3" value="temperature" name="Temperatursensor">Temperatursensor</option>
 					</select>
 					<label>Typ</label>
 				</div>
