@@ -13,21 +13,6 @@ const utils = require("@iobroker/adapter-core");
 
 class EigeneDatenpunkte extends utils.Adapter {
 
-	static createDevice(input){
-		this.log.info(input)
-		this.setObjectAsync("testVariable", {
-			type: "state",
-			common: {
-				name: "testVariable",
-				type: "boolean",
-				role: "indicator",
-				read: true,
-				write: true,
-			},
-			native: {},
-		});
-	}
-
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
@@ -163,7 +148,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				createDevice("muhDevice");
+				this.setObjectAsync(obj.message.name, obj.message.data);
 				break;
 				default:
 				this.log.info('command <'+ obj.command +'> is unkown');
