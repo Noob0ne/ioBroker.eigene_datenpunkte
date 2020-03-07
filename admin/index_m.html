@@ -104,7 +104,7 @@
 				break;
 				case 'Sensoren':
 				level1 = '';
-				level2 = '.' + name_media.value;
+				level2 = '.' + name_sensor.value;
 				break;
 			}
 
@@ -115,7 +115,7 @@
 
 			var DevicePath = level0 + level1 + level2;
 
-			sendTo('eigene_datenpunkte.' + instance, "log", value1.checked);
+			sendTo('eigene_datenpunkte.' + instance, "log", DevicePath);
 			//location.reload();
 		}
 
@@ -185,10 +185,6 @@
 				<div class="input-field col s12">
 					<input id="name_heating" type="text" class="validate">
 					<label for="name_heating">Name</label>
-				</div>
-				<div class="input-field col s3">
-					<input class="value" id="value1" type="checkbox" />
-					<label for="value1">Heizung Jaja</label>
 				</div>
 			</div>
 
