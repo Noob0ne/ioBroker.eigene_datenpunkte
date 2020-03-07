@@ -148,7 +148,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				this.log.info(input)
+				this.log.info("input")
 				this.setObjectAsync("testVariable", {
 					type: "state",
 					common: {
