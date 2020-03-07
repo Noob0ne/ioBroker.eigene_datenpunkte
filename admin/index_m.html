@@ -113,7 +113,7 @@
 				return; //Funktion wird abgebrochen
 			}
 
-			var DevicePath = level0 + level1 + level2;
+			var path = level0 + level1 + level2;
 			var data= {
 				type: "state",
 				common: {
@@ -125,7 +125,8 @@
 				},
 				native: {},
 			};
-			sendTo('eigene_datenpunkte.' + instance, "create", { "name":"John", "data":data});
+
+			sendTo('eigene_datenpunkte.' + instance, "create", { "name":path, "data":data});
 			//location.reload();
 		}
 			adapter.log.info("hallo");
