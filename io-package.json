@@ -41,6 +41,8 @@
 		"readme": "https://github.com/Noob0ne/ioBroker.eigene_datenpunkte/blob/master/README.md",
 		"loglevel": "info",
 		"mode": "daemon",
+		"messagebox": true,
+		"subscribe": "messagebox",
 		"type": "storage",
 		"compact": true,
 		"connectionType": "local",
