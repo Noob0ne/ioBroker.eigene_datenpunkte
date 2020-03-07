@@ -60,32 +60,29 @@
 	},
 	"objects": [],
 	"instanceObjects": [
- 	{
-            "_id": "Lichtsteuerung",
-            "type": "channel",
-            "common": {
-                "name":  "Lichtsteuerung",
-                "role":  "Licht"
-            },
-            "native": {}
-        },
- 	{
-            "_id": "Heizungssteuerung",
-            "type": "channel",
-            "common": {
-                "name":  "Heizungssteuerung",
-                "role":  "Heizen"
-            },
-            "native": {}
-        },
-     {
-            "_id": "Mediensteuerung",
-            "type": "channel",
-            "common": {
-                "name":  "Mediensteuerung",
-                "role":  "Medien"
-            },
-            "native": {}
-        }
+		{
+			"_id": "Lichtsteuerung",
+			"type": "channel",
+			"common": {
+				"name":  "Lichtsteuerung",
+			},
+			"native": {}
+		},
+		{
+			"_id": "Heizungssteuerung",
+			"type": "channel",
+			"common": {
+				"name":  "Heizungssteuerung",
+			},
+			"native": {}
+		},
+		{
+			"_id": "Mediensteuerung",
+			"type": "channel",
+			"common": {
+				"name":  "Mediensteuerung",
+			},
+			"native": {}
+		}
 	]
 }
