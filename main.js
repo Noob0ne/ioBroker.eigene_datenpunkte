@@ -148,7 +148,18 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj.message);
 				break;
 				case "create":
-				createVariable("testVariable");
+				this.log.info(input)
+				this.setObjectAsync("testVariable", {
+					type: "state",
+					common: {
+						name: "testVariable",
+						type: "boolean",
+						role: "indicator",
+						read: true,
+						write: true,
+					},
+					native: {},
+				});
 				this.log.info(obj.message+" wurde erstellt!")
 				break;
 				default:
