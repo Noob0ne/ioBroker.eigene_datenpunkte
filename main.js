@@ -13,6 +13,21 @@ const utils = require("@iobroker/adapter-core");
 
 class EigeneDatenpunkte extends utils.Adapter {
 
+	static createDevice(input){
+		this.log.info(input)
+		this.setObjectAsync("testVariable", {
+			type: "state",
+			common: {
+				name: "testVariable",
+				type: "boolean",
+				role: "indicator",
+				read: true,
+				write: true,
+			},
+			native: {},
+		});
+	}
+
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
@@ -131,20 +146,6 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 	}
 
-	static createDevice(input){
-			this.log.info(input)
-			this.setObjectAsync("testVariable", {
-				type: "state",
-				common: {
-					name: "testVariable",
-					type: "boolean",
-					role: "indicator",
-					read: true,
-					write: true,
-				},
-				native: {},
-			});
-		}
 
 	/**
 	* Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
