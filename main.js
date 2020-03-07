@@ -185,7 +185,7 @@ if (module.parent) {
 
 function createVariable(name,adapter){
 	adapter.log.info("Funktion mit "+name+" aufgerufen");
-	adapter.setObjectAsync(obj.message, {
+	adapter.setObjectAsync(this.name, {
 		type: "state",
 		common: {
 			name: this.name,
