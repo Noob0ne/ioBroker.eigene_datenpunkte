@@ -159,17 +159,18 @@ class EigeneDatenpunkte extends utils.Adapter {
 		}
 
 		async function createVariable(input){
+			this.log.info(input)
 			await this.setObjectAsync("testVariable", {
-			type: "state",
-			common: {
-				name: "testVariable",
-				type: "boolean",
-				role: "indicator",
-				read: true,
-				write: true,
-			},
-			native: {},
-		});
+				type: "state",
+				common: {
+					name: "testVariable",
+					type: "boolean",
+					role: "indicator",
+					read: true,
+					write: true,
+				},
+				native: {},
+			});
 		}
 
 
