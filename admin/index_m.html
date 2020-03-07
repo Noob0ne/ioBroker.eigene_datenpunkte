@@ -127,6 +127,7 @@
 			};
 
 			sendTo('eigene_datenpunkte.' + instance, "create", { "name":path, "data":data});
+			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created");
 			//location.reload();
 		}
 		adapter.log.info("hallo");
