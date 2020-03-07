@@ -59,34 +59,5 @@
 		"option3": "12"
 	},
 	"objects": [],
-	"instanceObjects": [
-		{
-			"_id": "Lichtsteuerung",
-			"common": {
-				"name":  "Lichtsteuerung"
-			},
-			"native": {}
-		},
-		{
-			"_id": "Heizungssteuerung",
-			"common": {
-				"name":  "Heizungssteuerung"
-			},
-			"native": {}
-		},
-		{
-			"_id": "Mediensteuerung",
-			"common": {
-				"name":  "Mediensteuerung"
-			},
-			"native": {}
-		},
-		{
-			"_id": "Sensoren",
-			"common": {
-				"name":  "diverse Sensoren"
-			},
-			"native": {}
-		}
-	]
+	"instanceObjects": []
 }
