@@ -115,7 +115,7 @@
 
 			var DevicePath = level0 + level1 + level2;
 
-			sendTo('eigene_datenpunkte.' + instance, "log", DevicePath);
+			sendTo('eigene_datenpunkte.' + instance, "create", DevicePath);
 			//location.reload();
 		}
 
@@ -165,7 +165,7 @@
 				</div>
 				<!-- Level 3 -->
 				<label class="col s4">
-					<input name="group1" id="OnOff" type="radio" checked />
+					<input name="group1" id="onoff" type="radio" checked />
 					<span>Ein/Aus</span>
 				</label>
 				<label class="col s4">
