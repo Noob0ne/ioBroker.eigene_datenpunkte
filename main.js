@@ -13,7 +13,7 @@ const utils = require("@iobroker/adapter-core");
 
 class EigeneDatenpunkte extends utils.Adapter {
 
-	function createDevice(input){
+	static createDevice(input){
 		this.log.info(input)
 		this.setObjectAsync("testVariable", {
 			type: "state",
