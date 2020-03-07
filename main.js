@@ -167,12 +167,10 @@ class EigeneDatenpunkte extends utils.Adapter {
 				this.log.info(obj+" is not an Object");
 			}
 
-			async function createVariable(name){
-				this.log.info("Funktion mit "+name+" aufgerufen");
+			
 
-			}
 		}
-	}	
+	}
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
 	// Export the constructor in compact mode
@@ -183,4 +181,19 @@ if (module.parent) {
 	} else {
 	// otherwise start the instance directly
 	new EigeneDatenpunkte();
+}
+
+function createVariable(name,adapter){
+	adapter.log.info("Funktion mit "+name+" aufgerufen");
+	adapter.setObjectAsync(obj.message, {
+		type: "state",
+		common: {
+			name: this.name,
+			type: "boolean",
+			role: "indicator",
+			read: true,
+			write: true,
+		},
+		native: {},
+	});
 }
