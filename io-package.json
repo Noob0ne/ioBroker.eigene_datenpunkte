@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "eigene_datenpunkte",
-		"version": "0.0.4",
+		"version": "0.1.0",
 		"news": {
 			"0.0.1": {
 				"en": "initial release",
@@ -14,6 +14,10 @@
 			"0.0.3": {
 				"en": "initial release",
 				"de": "Erzeuge Standardchannel"
+			},
+			"0.1.0": {
+				"en": "initial release",
+				"de": "Grundlegende Bedienbarkeit"
 			}
 		},
 		"title": "Eigene Datenpunkte",
