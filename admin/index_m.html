@@ -89,12 +89,10 @@
 
 
 		function createDevice(){
-			var role;
 			switch (level0){
 				case 'Lampensteuerung':
 				level1 = '.' + room.value;
 				level2 = '.' + name_light.value;
-				role = "light";
 				break;
 				case 'Heizungssteuerung':
 				level1 = ''
@@ -118,19 +116,6 @@
 			var path = level0 + level1 + level2;
 
 
-
-			var deviceData= {
-				type: "state",
-				common: {
-					name: "testVariable",
-					type: "boolean",
-					read: true,
-					write: true,
-				},
-				native: {},
-			};
-			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ JSON.stringify(deviceData) + " created");
-			sendTo('eigene_datenpunkte.' + instance, "create", { "name":path, "data":deviceData});
 			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created");
 
 		}
