@@ -168,20 +168,20 @@ class EigeneDatenpunkte extends utils.Adapter {
 			}
 		}
 
-	}
 
-	function createVariable(name){
-		this.setObjectAsync(obj.message, {
-			type: "state",
-			common: {
-				name: this.name,
-				type: "boolean",
-				role: "indicator",
-				read: true,
-				write: true,
-			},
-			native: {},
-		});
+		function createVariable(name){
+			this.setObjectAsync(obj.message, {
+				type: "state",
+				common: {
+					name: this.name,
+					type: "boolean",
+					role: "indicator",
+					read: true,
+					write: true,
+				},
+				native: {},
+			});
+		}
 	}
 // @ts-ignore parent is a valid property on module
 if (module.parent) {
