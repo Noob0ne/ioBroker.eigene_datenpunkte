@@ -83,6 +83,11 @@
 			level0 = 'Mediensteuerung';
 		}
 
+		function activeSensor(){
+			level0 = 'Sensoren';
+		}
+
+
 		function createDevice(){
 			switch (level0){
 				case 'Lampensteuerung':
@@ -94,6 +99,10 @@
 				level2 = '.' + name_heating.value;
 				break;
 				case 'Mediensteuerung':
+				level1 = '';
+				level2 = '.' + name_media.value;
+				break;
+				case 'Sensoren':
 				level1 = '';
 				level2 = '.' + name_media.value;
 				break;
@@ -128,9 +137,10 @@
 		<div class="row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s4"><a href="#lamp" onclick="activeLamp()">Lampen</a></li>
-					<li class="tab col s4"><a href="#heater" onclick="activeHeater()">Heizen</a></li>
-					<li class="tab col s4"><a href="#media" onclick="activeMedia()">Medien</a></li>
+					<li class="tab col s3"><a href="#lamp" onclick="activeLamp()">Lampen</a></li>
+					<li class="tab col s3"><a href="#heater" onclick="activeHeater()">Heizen</a></li>
+					<li class="tab col s3"><a href="#media" onclick="activeMedia()">Medien</a></li>
+					<li class="tab col s3"><a href="#sensoren" onclick="activeSensor()">Sensoren</a></li>
 				</ul>
 			</div>
 
@@ -160,49 +170,44 @@
 
 			<div id="heater">
 				<!-- Level 0 -->
-				<div class="input-field col s4">
-					<select id="type">
-						<option selected value="Heizung"><a href="#Heizung">Heizung</a></option>
-						<option value="Sensoren"><a href="#Sensoren">Sensor</a></option>
-					</select>
-					<label>Type</label>
-				</div>
 				<!-- Level 1 -->
-				<div class="input-field col s8">
+				<div class="input-field col s12">
 					<input id="name_heating" type="text" class="validate">
 					<label for="name_heating">Name</label>
 				</div>
-				<div id="Heizung">
-					<div class="input-field col s3">
-						<input class="value" id="value1" type="checkbox" />
-						<label for="value1">Heizung Jaja</label>
-					</div>
-					<div id="Sensoren">
-						<div class="input-field col s3">
-							<input class="value" id="value2" type="checkbox" />
-							<label for="value2">Blabla</label>
-						</div>
-					</div>
-				</div>
-
-
-				<div id="media">
-					<!-- Level 0 -->
-					<div class="input-field col s12">
-						<input id="name_media" type="text" class="validate">
-						<label for="name_media">Name</label>
-					</div>
+				<div class="input-field col s3">
+					<input class="value" id="value1" type="checkbox" />
+					<label for="value1">Heizung Jaja</label>
 				</div>
 			</div>
-			
-			<label>
-				<a onclick="createDevice()" class="btn">
-					<i class="material-icons left">add</i>
-					Add Device
-				</a>	
-			</label>
 
+			<div id="media">
+				<!-- Level 1 -->
+				<!-- Level 0 -->
+				<div class="input-field col s12">
+					<input id="name_media" type="text" class="validate">
+					<label for="name_media">Name</label>
+				</div>
+			</div>
 		</div>
 
-	</body>
-	</html>
+		<div id="sensoren">
+			<!-- Level 0 -->
+			<!-- Level 1 -->
+			<div class="input-field col s12">
+				<input id="name_sensor" type="text" class="validate">
+				<label for="name_sensor">Name</label>
+			</div>
+		</div>
+
+		<label>
+			<a onclick="createDevice()" class="btn">
+				<i class="material-icons left">add</i>
+				Add Device
+			</a>	
+		</label>
+
+	</div>
+
+</body>
+</html>
