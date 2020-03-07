@@ -87,7 +87,63 @@
 		function createDevice(){
 
 			sendTo('eigene_datenpunkte.' + instance, "log", "Knopf gedrückt!");
-			
+
+			switch (level0){
+				case 'Lampensteuerung':
+				level1 = '.' + room.value;
+				level2 = '.' + name_light.value;
+				role = "light";
+				break;
+				case 'Heizungssteuerung':
+				level1 = ''
+				level2 = '.' + name_heating.value;
+				break;
+				case 'Mediensteuerung':
+				level1 = '';
+				level2 = '.' + name_media.value;
+				break;
+				case 'Sensoren':
+				level1 = '.' + type.value;;
+				level2 = '.' + name_sensor.value;
+				break;
+			}
+
+			if (level2 == '.') {
+				alert("invalid name");
+				return; //Funktion wird abgebrochen
+			}
+
+			var path = level0 + level1 + level2;
+
+
+
+			var deviceData= {
+				type: "device",
+				common: {
+					name: "testVariable",
+					role: "light",
+				},
+				native: {},
+			};
+			sendTo('eigene_datenpunkte.' + instance, "create", { "name":path, "data":deviceData});
+			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created");
+			createState("ONOFF","boolean");
+
+			function createState(name, type){
+				var stateData= {
+					type: "state",
+					common: {
+						name: "testVariable",
+						type: "",
+						read: true,
+						write: true,
+					},
+					native: {},
+				};
+				stateData.common.type = type;
+				stateData.common.name = name;
+				sendTo('eigene_datenpunkte.' + instance, "create", { "name":path + '.' + name, "data":stateData});
+			}
 		}
 
 	</script>
@@ -185,14 +241,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="center-align">
-			<label>
-				<a onclick="createDevice()" class="btn">
-					<i class="material-icons left">add</i>
-					Add Device
-				</a>	
-			</label>
-		</div>
+		<label>
+			<a onclick="createDevice()" class="btn">
+				<i class="material-icons left">add</i>
+				Add Device
+			</a>	
+		</label>
 	</div>
 
 </body>
