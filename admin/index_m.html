@@ -66,19 +66,14 @@
 		}
 
 
-		function activeTab(newTab){
-			level0 = newTab;
-		}
-		function sensor_type(newType){
-			sensor_type=newType;
-		}
-		sensor_type('Bewegungsmelder')
-		activeTab('Lampensteuerung');
-		lamp_type('lampe_dimmable');
+
+		var level0 = 'Lichtsteuerung';
+		var lamp_type = 'lampe';
+		var sensor_type = 'motion';
 
 		function createDevice(){
 			sendTo('eigene_datenpunkte.' + instance, "log", "Typ: " + lamp_type);
-
+			var type = "";
 			switch (level0){
 				case 'Lampensteuerung':
 				level1 = '.' + room.value;
@@ -99,10 +94,10 @@
 				type = "media";
 				break;
 				case 'Sensoren':
-				level1 = '.' + sensor_type;
+				level1 = '.' + sensor_channel.value;
 				level2 = '.' + name_sensor.value;
 				role = "sensor";
-				type = sensor_type.value;
+				type = sensor_type;
 				break;
 			}
 
@@ -220,15 +215,15 @@
 				</div>
 				<!-- Level 3 -->
 				<label class="col s4">
-					<input name="lamp_select" id="onoff" type="radio" value="lampe" onclick="lamp_type='lamp'" />
+					<input name="lamp_select" id="onoff" type="radio" value="lampe" onclick="lamp_type='lampe'" />
 					<span>Ein/Aus</span>
 				</label>
 				<label class="col s4">
-					<input name="lamp_select" id="dimmable" type="radio" value="lampe_dimmable" onclick="lamp_type('lampe_dimmable')" checked />
+					<input name="lamp_select" id="dimmable" type="radio" value="lampe_dimmable" onclick="lamp_type='lampe_dimmable'" checked />
 					<span>Dimmbar</span>
 				</label>
 				<label class="col s4">
-					<input name="lamp_select" id="rgb" type="radio" value="lampe_rgb" onclick="lamp_type('lampe_rgb')" />
+					<input name="lamp_select" id="rgb" type="radio" value="lampe_rgb" onclick="lamp_type='lampe_rgb'" />
 					<span>Farbspektrum</span>
 				</label>
 			</div>
@@ -255,10 +250,10 @@
 			<div id="sensoren">
 				<!-- Level 0 -->
 				<div class="input-field col s4">
-					<select id="sensor_type">
-						<option onclick="sensor_type('Bewegungsmelder')" value="motion" name="Bewegungsmelder" selected>Bewegungsmelder</option>
-						<option onclick="sensor_type('Fenstersensor')" value="window" name="Fenstersensor">Fenstersensor</option>
-						<option onclick="sensor_type('Temperatursensor')" value="temperature" name="Temperatursensor">Temperatursensor</option>
+					<select id="sensor_channel">
+						<option onclick="sensor_type('motion')" value="Bewegungsmelder" name="Bewegungsmelder" selected>Bewegungsmelder</option>
+						<option onclick="sensor_type('window')" value="Fenstersensor" name="Fenstersensor">Fenstersensor</option>
+						<option onclick="sensor_type('temperature')" value="Temperatursensor" name="Temperatursensor">Temperatursensor</option>
 					</select>
 					<label>Typ</label>
 				</div>
