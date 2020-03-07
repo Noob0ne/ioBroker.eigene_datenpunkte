@@ -65,26 +65,19 @@
 			});
 		}
 
-		var level0 = 'Lampensteuerung';
 
-		function activeLamp(){
-			level0 = 'Lampensteuerung';
-		}
-
-		function activeHeater(){
-			level0 = 'Heizungssteuerung';
-		}
-
-		function activeMedia(){
-			level0 = 'Mediensteuerung';
-		}
-
-		function activeSensor(){
-			level0 = 'Sensoren';
+		function activeTab(newTab){
+			level0 = 'newTab';
 		}
 		function lamp_type(newType){
-			sendTo('eigene_datenpunkte.' + instance, "log", "LampType : "+ newType);
+			lamp_type=newType;
 		}
+		function sensor_type(newType){
+			sensor_type=newType;
+		}
+		sensor_type('Bewegungsmelder')
+		activeTab('Lampensteuerung');
+		lamp_type('dimmable');
 
 		function createDevice(){
 
@@ -93,7 +86,7 @@
 				level1 = '.' + room.value;
 				level2 = '.' + name_light.value;
 				role = "light";
-				type = document.querySelector('input[name="lamp_select"]:checked').value;
+				type = lamp_type;
 				break;
 				case 'Heizungssteuerung':
 				level1 = ''
@@ -108,7 +101,7 @@
 				type = "media";
 				break;
 				case 'Sensoren':
-				level1 = '.' + document.querySelector('input[name="sensor_type"]:selected').name;
+				level1 = '.' + sensor_type;
 				level2 = '.' + name_sensor.value;
 				role = "sensor";
 				type = sensor_type.value;
@@ -201,10 +194,10 @@
 		<div class="row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s3"><a href="#lamp" onclick="activeLamp()">Lampen</a></li>
-					<li class="tab col s3"><a href="#heater" onclick="activeHeater()">Heizen</a></li>
-					<li class="tab col s3"><a href="#media" onclick="activeMedia()">Medien</a></li>
-					<li class="tab col s3"><a href="#sensoren" onclick="activeSensor()">Sensoren</a></li>
+					<li class="tab col s3"><a href="#lamp" onclick="activeTab('Lichtsteuerung')">Lampen</a></li>
+					<li class="tab col s3"><a href="#heater" onclick="activeTab('Heizungssteuerung')">Heizen</a></li>
+					<li class="tab col s3"><a href="#media" onclick="activeTab('Mediensteuerung')">Medien</a></li>
+					<li class="tab col s3"><a href="#sensoren" onclick="activeTab('Sensoren')">Sensoren</a></li>
 				</ul>
 			</div>
 
@@ -264,10 +257,10 @@
 			<div id="sensoren">
 				<!-- Level 0 -->
 				<div class="input-field col s4">
-					<select id="sensor_type" onchange="sensor_type(sensor_type.value)">
-						<option value="motion" name="Bewegungsmelder" selected>Bewegungsmelder</option>
-						<option value="window" name="Fenstersensor">Fenstersensor</option>
-						<option value="temperature" name="Temperatursensor">Temperatursensor</option>
+					<select id="sensor_type">
+						<option onclick="sensor_type('Bewegungsmelder')" value="motion" name="Bewegungsmelder" selected>Bewegungsmelder</option>
+						<option onclick="sensor_type('Fenstersensor')" value="window" name="Fenstersensor">Fenstersensor</option>
+						<option onclick="sensor_type('Temperatursensor')" value="temperature" name="Temperatursensor">Temperatursensor</option>
 					</select>
 					<label>Typ</label>
 				</div>
