@@ -151,7 +151,7 @@
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("motion_detected","Bewegung erkannt","boolean","state",false,""));
 					break;
 					case "window":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("closed","geschlossen","boolean","state",false,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("opened","geöffnet","boolean","state",false,""));
 					break;
 					case "temperature":
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_current","aktuelle Temperatur","state","state",false,"°C"));
