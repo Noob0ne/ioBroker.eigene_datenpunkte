@@ -153,7 +153,9 @@
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("opened","geöffnet","boolean","state",false,""));
 					break;
 					case "temperature":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_current","aktuelle Temperatur","state","state",false,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temperature","aktuelle Temperatur","number","value.temperature",false,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("pressure","aktuelle Temperatur","number","value.pressure",false,"hPa"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("humidity","aktuelle Temperatur","number","value.humidty",false,"%"));
 					break;
 
 				}
