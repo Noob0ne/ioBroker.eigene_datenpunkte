@@ -108,13 +108,12 @@
 				alert("invalid name");
 				return; //Funktion wird abgebrochen
 			}
-
+			
 			var path = level0 + level1 + level2;
 
 			var deviceData= {type: "device", common: { name: "testVariable", role: "light", }, native: {}, };
 			deviceData.common.name = "Daten "+level2;
 			deviceData.common.role = role;
-
 
 			sendTo('eigene_datenpunkte.' + instance, "create", { "name": path, "data": deviceData });
 			sendTo('eigene_datenpunkte.' + instance, "log", "Device : "+ path + " created (" + type +")");
@@ -166,10 +165,10 @@
 					stateData.common.role = role;
 					stateData.common.write = write;
 					stateData.common.unit = unit;
+					M.toast({html: name + ' wurde erstellt!'});
 					return { "name":path + '.' + name, "data":stateData};
 				}
 			}
-			location.reload();
 		}
 
 	</script>
