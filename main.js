@@ -40,6 +40,7 @@ class EigeneDatenpunkte extends utils.Adapter {
 		//this.log.info("config option2: " + this.config.option2);
 
 
+
 		
 		/*
 		For every state in the system there has to be also an object of type state
