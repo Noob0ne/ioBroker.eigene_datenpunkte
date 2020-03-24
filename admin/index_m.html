@@ -134,9 +134,9 @@
 					case "thermostat":
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_target","Zieltemperatur","number","level",true,"°C"));
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_current","aktuelle Temperatur","number","state",false,"°C"));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("auto","automatische Steuerung","boolean","switch",true,""));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("manualValve","manuelle Steuerung","number","level",true,"%"));
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("valve","Ventilstellung","number","state",false,"%"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("mode","aktueller Modus","string","state",true,""));
+					//sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("auto","automatische Steuerung","boolean","switch",true,""));
 					break;
 
 					//Medien
@@ -263,7 +263,7 @@
 					<label>Typ</label>
 				</div>
 				<!-- Level 1 -->
-		         		<div class="input-field col s8">
+				<div class="input-field col s8">
 					<input id="name_sensor" type="text" class="validate">
 					<label for="name_sensor">Name</label>
 				</div>
