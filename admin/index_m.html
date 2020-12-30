@@ -135,8 +135,8 @@
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_target",level2+"_"+"Zieltemperatur","number","level",true,"°C"));
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_current",level2+"_"+"aktuelle Temperatur","number","state",false,"°C"));
 					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("valve",level2+"_"+"Ventilstellung","number","state",false,"%"));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temp_min",level2+"_"+"","Heiztemperatur","number",true,"°C"));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temp_comfort",level2+"_"+"Spartemperatur","number","state",true,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temp_min",level2+"_"+"Spartemperatur","number",true,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temp_comfort",level2+"_"+"Heiztemperatur","number","state",true,"°C"));
 					break;
 
 					//Medien
