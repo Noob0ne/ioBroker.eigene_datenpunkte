@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "eigene_datenpunkte",
-		"version": "0.1.2",
+		"version": "0.1.3",
 		"news": {
 			"0.0.1": {
 				"en": "initial release",
@@ -18,6 +18,9 @@
 			"0.1.0": {
 				"en": "initial release",
 				"de": "Grundlegende Bedienbarkeit"
+			},
+			"0.1.3": {
+				"en": "added name in Type"
 			}
 		},
 		"title": "Eigene Datenpunkte",
