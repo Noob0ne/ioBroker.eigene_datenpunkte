@@ -123,39 +123,39 @@
 				switch (type){
 					// Lampen
 					case "lampe_rgb":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("color","RGB-Wert","string","level.color.rgb",true,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("color",level2+"_"+"RGB-Wert","string","level.color.rgb",true,""));
 					case "lampe_dimmable":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("brightness","Helligkeitswert","number","level.dimmer",true,"%"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("brightness",level2+"_"+"Helligkeitswert","number","level.dimmer",true,"%"));
 					case "lampe":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("state","Lampe eingeschalten","boolean","switch",true,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("state",level2+"_"+"Zustand","boolean","switch",true,""));
 					break;
 
 					//Heizung
 					case "thermostat":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_target","Zieltemperatur","number","level",true,"°C"));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_current","aktuelle Temperatur","number","state",false,"°C"));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("valve","Ventilstellung","number","state",false,"%"));
-					//sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("mode","aktueller Modus","string","state",true,""));
-					//sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("auto","automatische Steuerung","boolean","switch",true,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_target",level2+"_"+"Zieltemperatur","number","level",true,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("tmp_current",level2+"_"+"aktuelle Temperatur","number","state",false,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("valve",level2+"_"+"Ventilstellung","number","state",false,"%"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temp_min",level2+"_"+"","Heiztemperatur","number",true,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temp_comfort",level2+"_"+"Spartemperatur","number","state",true,"°C"));
 					break;
 
 					//Medien
 					case "media":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("desired_state","gewünschter Wert","boolean","switch",true,""));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("state","tatsächlicher Wert","boolean","state",false,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("desired_state",level2+"_"+"Zielzustand","boolean","switch",true,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("state",level2+"_"+"Zustand","boolean","state",false,""));
 					break;
 
 					//Sensoren
 					case "motion":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("motion_detected","Bewegung erkannt","boolean","state",false,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("motion_detected",level2+"_"+"Bewegung","boolean","state",false,""));
 					break;
 					case "window":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("opened","geöffnet","boolean","state",false,""));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("opened",level2+"_"+"geöffnet","boolean","state",false,""));
 					break;
 					case "temperature":
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temperature","aktuelle Temperatur","number","value.temperature",false,"°C"));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("pressure","aktuelle Temperatur","number","value.pressure",false,"hPa"));
-					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("humidity","aktuelle Temperatur","number","value.humidty",false,"%"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("temperature",level2+"_"+"Temperatur","number","value.temperature",false,"°C"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("pressure",level2+"_"+"Luftdruck","number","value.pressure",false,"hPa"));
+					sendTo('eigene_datenpunkte.' + instance, "create", createStateJSON("humidity",level2+"_"+"Luftfeuchtigkeit","number","value.humidty",false,"%"));
 					break;
 
 				}
